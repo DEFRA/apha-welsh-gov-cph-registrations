@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1173,3817</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1141,4030</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Type_1_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="43">
@@ -101,7 +101,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Flowchart DisplayName="Permanent Type 1" sap:VirtualizedContainerService.HintSize="748,3922" sap2010:WorkflowViewState.IdRef="Flowchart_3">
+  <Flowchart DisplayName="Permanent Type 1" sap:VirtualizedContainerService.HintSize="736,3965" sap2010:WorkflowViewState.IdRef="Flowchart_3">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:Int32" Default="0" Name="intNoOfRecords" />
       <Variable x:TypeArguments="str:GroupCollection" Name="collNames" />
@@ -128,14 +128,14 @@
         <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
         <av:Size x:Key="ShapeSize">60,75</av:Size>
         <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,127.5</av:PointCollection>
-        <x:Double x:Key="Height">3885.5</x:Double>
-        <x:Double x:Key="Width">714</x:Double>
+        <x:Double x:Key="Height">3929</x:Double>
+        <x:Double x:Key="Width">702</x:Double>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID40</x:Reference>
+      <x:Reference>__ReferenceID41</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID40">
+    <FlowStep x:Name="__ReferenceID41">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,127.5</av:Point>
@@ -1904,7 +1904,7 @@
                                                                                                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                                                                           <av:Point x:Key="ShapeLocation">200,3784.5</av:Point>
                                                                                                                                                           <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                                                                                                                                          <av:PointCollection x:Key="ConnectorLocation">310,2985.5 310,3035.5</av:PointCollection>
+                                                                                                                                                          <av:PointCollection x:Key="ConnectorLocation">300,3835.5 300,3885.5</av:PointCollection>
                                                                                                                                                         </scg:Dictionary>
                                                                                                                                                       </sap:WorkflowViewStateService.ViewState>
                                                                                                                                                       <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_SAMBrowser]" BrowserType="Edge" DisplayName="End Research" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="BrowserScope_29">
@@ -2046,6 +2046,18 @@
                                                                                                                                                           </ActivityAction>
                                                                                                                                                         </ui:BrowserScope.Body>
                                                                                                                                                       </ui:BrowserScope>
+                                                                                                                                                      <FlowStep.Next>
+                                                                                                                                                        <FlowStep x:Name="__ReferenceID40">
+                                                                                                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                                                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                                                                              <av:Point x:Key="ShapeLocation">200,3885.5</av:Point>
+                                                                                                                                                              <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                                                                                                                                              <av:PointCollection x:Key="ConnectorLocation">310,3207.5 310,3255.5</av:PointCollection>
+                                                                                                                                                            </scg:Dictionary>
+                                                                                                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                                                                                                          <RemoveFromCollection x:TypeArguments="x:String" Collection="[io_TaskIDs]" DisplayName="Remove Task IDs" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveFromCollection`1_6" Item="[io_TaskIDs.Last]" />
+                                                                                                                                                        </FlowStep>
+                                                                                                                                                      </FlowStep.Next>
                                                                                                                                                     </FlowStep>
                                                                                                                                                   </FlowStep.Next>
                                                                                                                                                 </FlowStep>
@@ -2234,5 +2246,6 @@
     <x:Reference>__ReferenceID37</x:Reference>
     <x:Reference>__ReferenceID38</x:Reference>
     <x:Reference>__ReferenceID39</x:Reference>
+    <x:Reference>__ReferenceID40</x:Reference>
   </Flowchart>
 </Activity>
