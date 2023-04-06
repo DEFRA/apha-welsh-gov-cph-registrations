@@ -13,7 +13,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1154,1495</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1173,1495</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetTransactionData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="38">
@@ -95,58 +95,59 @@
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>Pop Ups</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap2010:Annotation.AnnotationText="Get a transaction item from a specified source (e.g., Orchestrator queues, spreadsheets, databases, mailboxes or web APIs). &#xA;&#xA;This framework is setup by default to look for an Outlook MailMessage from a config-specified mailbox, this should be changed on a work package basis with out_TransactionItem being set to a single transaction from whatever source is required.&#xA;&#xA;If there are no transaction items remaining, out_TransactionItem should be set to Nothing, which leads to the End Process state. &#xA;&#xA;out_boolLastTransaction should be set to True where it is possible to determine that a transaction is the last in the batch. If this is not possible to derive then changes will need to be made to the &quot;Final Transaction&quot; transition at the framework's parent level. " DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="875,1430" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart sap2010:Annotation.AnnotationText="Get a transaction item from a specified source (e.g., Orchestrator queues, spreadsheets, databases, mailboxes or web APIs). &#xA;&#xA;This framework is setup by default to look for an Outlook MailMessage from a config-specified mailbox, this should be changed on a work package basis with out_TransactionItem being set to a single transaction from whatever source is required.&#xA;&#xA;If there are no transaction items remaining, out_TransactionItem should be set to Nothing, which leads to the End Process state. &#xA;&#xA;out_boolLastTransaction should be set to True where it is possible to determine that a transaction is the last in the batch. If this is not possible to derive then changes will need to be made to the &quot;Final Transaction&quot; transition at the framework's parent level. " DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="1145,1473" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+        <av:Point x:Key="ShapeLocation">310,2.5</av:Point>
         <av:Size x:Key="ShapeSize">60,75</av:Size>
-        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,127.5</av:PointCollection>
+        <av:PointCollection x:Key="ConnectorLocation">340,77.5 340,127.5</av:PointCollection>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-        <x:Double x:Key="Width">841</x:Double>
-        <x:Double x:Key="Height">1247</x:Double>
+        <x:Double x:Key="Width">1111</x:Double>
+        <x:Double x:Key="Height">1290</x:Double>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID8</x:Reference>
+      <x:Reference>__ReferenceID10</x:Reference>
     </Flowchart.StartNode>
-    <FlowDecision x:Name="__ReferenceID1" Condition="[io_listFileInfo.Count &gt; 0]" DisplayName="Files to Process?" sap:VirtualizedContainerService.HintSize="91,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+    <FlowDecision x:Name="__ReferenceID3" Condition="[io_listFileInfo.Count &gt; 0]" DisplayName="Files to Process?" sap:VirtualizedContainerService.HintSize="91,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <av:Point x:Key="ShapeLocation">434.5,363</av:Point>
+          <av:Point x:Key="ShapeLocation">474.5,363</av:Point>
           <av:Size x:Key="ShapeSize">91,87</av:Size>
-          <av:PointCollection x:Key="FalseConnector">525.5,406.5 680,406.5 680,490</av:PointCollection>
-          <av:PointCollection x:Key="TrueConnector">434.5,406.5 288.641666666667,406.5 288.641666666667,516.5</av:PointCollection>
+          <av:PointCollection x:Key="FalseConnector">565.5,406.5 980,406.5 980,1010</av:PointCollection>
+          <av:PointCollection x:Key="TrueConnector">474.5,406.5 184.141666666667,406.5 184.141666666667,516.5</av:PointCollection>
           <x:String x:Key="TrueLabel">Yes</x:String>
           <x:String x:Key="FalseLabel">No</x:String>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <FlowDecision.True>
-        <FlowDecision x:Name="__ReferenceID2" Condition="[io_TransactionData.RowCount &gt; 0]" DisplayName="Rows to Process?" sap:VirtualizedContainerService.HintSize="96,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
+        <FlowDecision x:Name="__ReferenceID4" Condition="[io_TransactionData.RowCount &gt; 0]" DisplayName="More Rows in Current File?" sap:VirtualizedContainerService.HintSize="147,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              <av:Point x:Key="ShapeLocation">240.641666666667,516.5</av:Point>
-              <av:Size x:Key="ShapeSize">96,87</av:Size>
-              <av:PointCollection x:Key="FalseConnector">336.641666666667,560 460,560 460,677</av:PointCollection>
+              <av:Point x:Key="ShapeLocation">110.641666666667,516.5</av:Point>
+              <av:Size x:Key="ShapeSize">147,87</av:Size>
+              <av:PointCollection x:Key="FalseConnector">257.641666666667,560 590,560 590,627</av:PointCollection>
               <x:String x:Key="FalseLabel">No</x:String>
               <x:String x:Key="TrueLabel">Yes</x:String>
-              <av:PointCollection x:Key="TrueConnector">240.641666666667,560 105.5,560 105.5,809 290,809 290,857</av:PointCollection>
+              <av:PointCollection x:Key="TrueConnector">110.641666666667,560 80.641666666667,560 80.641666666667,930 210,930</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <FlowDecision.True>
             <FlowStep x:Name="__ReferenceID0">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">190,857</av:Point>
+                  <av:Point x:Key="ShapeLocation">210,897</av:Point>
                   <av:Size x:Key="ShapeSize">200,66</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">290,923 290,973</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">310,963 310,1013</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Assign Next TransactionItem" sap:VirtualizedContainerService.HintSize="526,766" sap2010:WorkflowViewState.IdRef="Sequence_14">
+              <Sequence DisplayName="Assign Next TransactionItem" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_14">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="sd:DataRow" Name="TestRow" />
                 </Sequence.Variables>
@@ -176,22 +177,22 @@
                 <ui:RemoveDataRow RowIndex="{x:Null}" DataTable="[io_TransactionData]" DisplayName="Remove Row From Transaction Data" sap:VirtualizedContainerService.HintSize="484,185" sap2010:WorkflowViewState.IdRef="RemoveDataRow_1" Row="[io_TransactionData.Rows(0)]" />
               </Sequence>
               <FlowStep.Next>
-                <FlowDecision x:Name="__ReferenceID5" Condition="[io_listFileInfo.Count = 0 AND io_TransactionData.RowCount = 0]" DisplayName="Last Transaction?" sap:VirtualizedContainerService.HintSize="95,87" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
+                <FlowDecision x:Name="__ReferenceID6" Condition="[io_listFileInfo.Count = 0 AND io_TransactionData.RowCount = 0]" DisplayName="Last Transaction?" sap:VirtualizedContainerService.HintSize="95,87" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <av:Point x:Key="ShapeLocation">242.5,973</av:Point>
+                      <av:Point x:Key="ShapeLocation">262.5,1013</av:Point>
                       <av:Size x:Key="ShapeSize">95,87</av:Size>
                       <x:String x:Key="TrueLabel">Yes</x:String>
                       <x:String x:Key="FalseLabel">No</x:String>
-                      <av:PointCollection x:Key="TrueConnector">242.5,1016.5 139.895,1016.5 139.895,1130</av:PointCollection>
+                      <av:PointCollection x:Key="TrueConnector">262.5,1056.5 179.895,1056.5 179.895,1200</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <FlowDecision.True>
-                    <FlowStep x:Name="__ReferenceID6">
+                    <FlowStep x:Name="__ReferenceID7">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">8.89499999999998,1130</av:Point>
+                          <av:Point x:Key="ShapeLocation">48.895,1200</av:Point>
                           <av:Size x:Key="ShapeSize">262,60</av:Size>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
@@ -215,12 +216,12 @@
             </FlowStep>
           </FlowDecision.True>
           <FlowDecision.False>
-            <FlowStep x:Name="__ReferenceID4">
+            <FlowStep x:Name="__ReferenceID1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">360,677</av:Point>
+                  <av:Point x:Key="ShapeLocation">490,627</av:Point>
                   <av:Size x:Key="ShapeSize">200,66</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">460,743 460,773 290,773 290,857</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">590,693 590,743</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <Sequence DisplayName="Extract Next File Transactions" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_10">
@@ -449,42 +450,84 @@
                 </Sequence>
               </Sequence>
               <FlowStep.Next>
-                <x:Reference>__ReferenceID0</x:Reference>
+                <FlowDecision x:Name="__ReferenceID8" DisplayName="Rows to Process?" sap:VirtualizedContainerService.HintSize="96,87" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
+                  <FlowDecision.Condition>
+                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="io_TransactionData.RowCount &gt; 0" />
+                  </FlowDecision.Condition>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <av:Point x:Key="ShapeLocation">542,743</av:Point>
+                      <av:Size x:Key="ShapeSize">96,87</av:Size>
+                      <x:String x:Key="FalseLabel">No</x:String>
+                      <x:String x:Key="TrueLabel">Yes</x:String>
+                      <av:PointCollection x:Key="TrueConnector">542,786.5 310,786.5 310,897</av:PointCollection>
+                      <av:PointCollection x:Key="FalseConnector">638,786.5 841.5,786.5 841.5,703.5</av:PointCollection>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <FlowDecision.True>
+                    <x:Reference>__ReferenceID0</x:Reference>
+                  </FlowDecision.True>
+                  <FlowDecision.False>
+                    <FlowDecision x:Name="__ReferenceID9" DisplayName="More Files to Process?" sap:VirtualizedContainerService.HintSize="122,87" sap2010:WorkflowViewState.IdRef="FlowDecision_6">
+                      <FlowDecision.Condition>
+                        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="io_listFileInfo.Count &gt; 0" />
+                      </FlowDecision.Condition>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <av:Point x:Key="ShapeLocation">780.5,616.5</av:Point>
+                          <av:Size x:Key="ShapeSize">122,87</av:Size>
+                          <x:String x:Key="FalseLabel">No</x:String>
+                          <x:String x:Key="TrueLabel">Yes</x:String>
+                          <av:PointCollection x:Key="TrueConnector">780.5,660 690,660</av:PointCollection>
+                          <av:PointCollection x:Key="FalseConnector">902.5,660 980,660 980,1010</av:PointCollection>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <FlowDecision.True>
+                        <x:Reference>__ReferenceID1</x:Reference>
+                      </FlowDecision.True>
+                      <FlowDecision.False>
+                        <FlowStep x:Name="__ReferenceID2">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">849,1010</av:Point>
+                              <av:Size x:Key="ShapeSize">262,60</av:Size>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign DisplayName="No Transactions to Process" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_29">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="sd:DataTable">[out_TransactionItem]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="sd:DataTable">[Nothing]</InArgument>
+                            </Assign.Value>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Assign>
+                        </FlowStep>
+                      </FlowDecision.False>
+                    </FlowDecision>
+                  </FlowDecision.False>
+                </FlowDecision>
               </FlowStep.Next>
             </FlowStep>
           </FlowDecision.False>
         </FlowDecision>
       </FlowDecision.True>
       <FlowDecision.False>
-        <FlowStep x:Name="__ReferenceID7">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">549,490</av:Point>
-              <av:Size x:Key="ShapeSize">262,60</av:Size>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="No Transactions to Process" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_29">
-            <Assign.To>
-              <OutArgument x:TypeArguments="sd:DataTable">[out_TransactionItem]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="sd:DataTable">[Nothing]</InArgument>
-            </Assign.Value>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </Assign>
-        </FlowStep>
+        <x:Reference>__ReferenceID2</x:Reference>
       </FlowDecision.False>
     </FlowDecision>
-    <FlowStep x:Name="__ReferenceID3">
+    <FlowStep x:Name="__ReferenceID5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">380,247</av:Point>
+          <av:Point x:Key="ShapeLocation">420,247</av:Point>
           <av:Size x:Key="ShapeSize">200,66</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">480,313 480,363</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">520,313 520,363</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <Sequence DisplayName="Retrieve Files" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_8">
@@ -571,27 +614,29 @@
         </Sequence>
       </Sequence>
       <FlowStep.Next>
-        <x:Reference>__ReferenceID1</x:Reference>
+        <x:Reference>__ReferenceID3</x:Reference>
       </FlowStep.Next>
     </FlowStep>
-    <FlowDecision x:Name="__ReferenceID8" Condition="[NOT(io_listFileInfo.Count = 0 AND io_TransactionData.RowCount = 0)]" DisplayName="First Run?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2" True="{x:Reference __ReferenceID2}" False="{x:Reference __ReferenceID3}">
+    <FlowDecision x:Name="__ReferenceID10" Condition="[NOT(io_listFileInfo.Count = 0 AND io_TransactionData.RowCount = 0)]" DisplayName="First Run?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2" True="{x:Reference __ReferenceID4}" False="{x:Reference __ReferenceID5}">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <av:Point x:Key="ShapeLocation">265,127.5</av:Point>
+          <av:Point x:Key="ShapeLocation">305,127.5</av:Point>
           <av:Size x:Key="ShapeSize">70,87</av:Size>
-          <av:PointCollection x:Key="FalseConnector">335,171 480,171 480,247</av:PointCollection>
+          <av:PointCollection x:Key="FalseConnector">375,171 520,171 520,247</av:PointCollection>
           <x:String x:Key="FalseLabel">Get Files</x:String>
           <x:String x:Key="TrueLabel">Next File</x:String>
-          <av:PointCollection x:Key="TrueConnector">265,171 108.5,171 108.5,488 288.641666666667,488 288.641666666667,516.5</av:PointCollection>
+          <av:PointCollection x:Key="TrueConnector">305,171 184.141666666667,171 184.141666666667,516.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </FlowDecision>
+    <x:Reference>__ReferenceID1</x:Reference>
     <x:Reference>__ReferenceID4</x:Reference>
-    <x:Reference>__ReferenceID2</x:Reference>
     <x:Reference>__ReferenceID0</x:Reference>
-    <x:Reference>__ReferenceID5</x:Reference>
     <x:Reference>__ReferenceID6</x:Reference>
     <x:Reference>__ReferenceID7</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID8</x:Reference>
+    <x:Reference>__ReferenceID9</x:Reference>
   </Flowchart>
 </Activity>
