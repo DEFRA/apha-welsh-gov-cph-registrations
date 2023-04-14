@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>933,1661</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1033,1661</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Verify_is_cattle_is_listed_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="58">
@@ -77,7 +77,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[IN_SAMBrowser]" BrowserType="Chrome" DisplayName="Attach Browser SAM" sap:VirtualizedContainerService.HintSize="721,1504" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="bfacad78ab49ed117359713c10f8facb">
+    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[IN_SAMBrowser]" BrowserType="Edge" DisplayName="Attach Browser SAM" sap:VirtualizedContainerService.HintSize="721,1504" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="bfacad78ab49ed117359713c10f8facb">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
