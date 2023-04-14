@@ -7730,9 +7730,9 @@
     "restore": {
       "projectUniqueName": "Welsh Gov CPH",
       "projectName": "Welsh Gov CPH",
-      "projectPath": "C:\\Users\\m1011226\\OneDrive - Defra\\UiPath\\Welsh Gov CPH\\.local",
+      "projectPath": "C:\\Users\\m1011226\\Documents\\GitHub\\apha-welsh-gov-cph-registrations\\Welsh Gov CPH\\.local",
       "packagesPath": "C:\\Users\\m1011226\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\m1011226\\OneDrive - Defra\\UiPath\\Welsh Gov CPH\\.local"
+      "outputPath": "C:\\Users\\m1011226\\Documents\\GitHub\\apha-welsh-gov-cph-registrations\\Welsh Gov CPH\\.local"
     },
     "frameworks": {
       "net461": {
