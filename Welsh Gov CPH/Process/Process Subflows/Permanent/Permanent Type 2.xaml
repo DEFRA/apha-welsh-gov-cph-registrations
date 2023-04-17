@@ -280,15 +280,9 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Search for Cattle workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Process\Process Subflows\SAM Components\Search for Cattle.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <OutArgument x:TypeArguments="sd:DataTable" x:Key="OUT_AnimalType">
-                        <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtAnimalType" />
-                      </OutArgument>
-                      <InArgument x:TypeArguments="ui:Browser" x:Key="IN_SAMBrowser">
-                        <mva:VisualBasicValue x:TypeArguments="ui:Browser" ExpressionText="in_SAMBrowser" />
-                      </InArgument>
-                      <OutArgument x:TypeArguments="sd:DataTable" x:Key="OUT_dtAnimalSpecies">
-                        <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtAnimalSpecies" />
-                      </OutArgument>
+                      <OutArgument x:TypeArguments="sd:DataTable" x:Key="OUT_AnimalType">[dtAnimalType]</OutArgument>
+                      <InArgument x:TypeArguments="ui:Browser" x:Key="IN_SAMBrowser">[in_SAMBrowser]</InArgument>
+                      <OutArgument x:TypeArguments="sd:DataTable" x:Key="OUT_dtAnimalSpecies">[dtAnimalSpecies]</OutArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -636,7 +630,7 @@
                                               <av:PointCollection x:Key="ConnectorLocation">310,1195.5 310,1245.5</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_SAMBrowser]" BrowserType="Edge" DisplayName="Confirm Location Update" sap:VirtualizedContainerService.HintSize="434,452" sap2010:WorkflowViewState.IdRef="BrowserScope_32">
+                                          <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_SAMBrowser]" BrowserType="Edge" DisplayName="Confirm Location Update" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="BrowserScope_32">
                                             <ui:BrowserScope.Body>
                                               <ActivityAction x:TypeArguments="x:Object">
                                                 <ActivityAction.Argument>
@@ -724,15 +718,15 @@
                                                 </sap:WorkflowViewStateService.ViewState>
                                               </ui:InvokeWorkflowFile>
                                               <FlowStep.Next>
-                                                <FlowDecision x:Name="__ReferenceID18" Condition="[booNoMatchingData = False]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_26">
+                                                <FlowDecision x:Name="__ReferenceID18" Condition="[booNoMatchingData = False]" DisplayName="Location found?" sap:VirtualizedContainerService.HintSize="92,87" sap2010:WorkflowViewState.IdRef="FlowDecision_26">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                      <av:Point x:Key="ShapeLocation">270.5,1346.5</av:Point>
-                                                      <av:Size x:Key="ShapeSize">79,87</av:Size>
-                                                      <av:PointCollection x:Key="TrueConnector">270.5,1390 100,1390 100,1469</av:PointCollection>
-                                                      <av:PointCollection x:Key="FalseConnector">349.5,1390 370,1390 370,1529 310,1529 310,1559</av:PointCollection>
+                                                      <av:Point x:Key="ShapeLocation">264,1346.5</av:Point>
+                                                      <av:Size x:Key="ShapeSize">92,87</av:Size>
+                                                      <av:PointCollection x:Key="TrueConnector">264,1390 100,1390 100,1469</av:PointCollection>
+                                                      <av:PointCollection x:Key="FalseConnector">356,1390 370,1390 370,1529 310,1529 310,1559</av:PointCollection>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                   <FlowDecision.True>
@@ -904,7 +898,7 @@
                                                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                           </scg:Dictionary>
                                                                         </sap:WorkflowViewStateService.ViewState>
-                                                                        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser Animal Health Portal" sap:VirtualizedContainerService.HintSize="435,490" sap2010:WorkflowViewState.IdRef="BrowserScope_34" InformativeScreenshot="8e91ebb2cd850ced6838ffb82f811689" Selector="&lt;html app='chrome.exe' htmlwindowname='Composite_HS31XVJMQJAK541ME53FBJQREBS3JHE7WA' title='Animal Health Portal' /&gt;">
+                                                                        <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_SAMBrowser]" BrowserType="Edge" DisplayName="Attach Browser Animal Health Portal" sap:VirtualizedContainerService.HintSize="435,490" sap2010:WorkflowViewState.IdRef="BrowserScope_34" InformativeScreenshot="e50fe928e9a2d4904585bb58a27a820d">
                                                                           <ui:BrowserScope.Body>
                                                                             <ActivityAction x:TypeArguments="x:Object">
                                                                               <ActivityAction.Argument>
@@ -928,7 +922,7 @@
                                                                                     </ui:CursorPosition>
                                                                                   </ui:Click.CursorPosition>
                                                                                   <ui:Click.Target>
-                                                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="136daf46-8745-4bf4-b300-890e61964faf" InformativeScreenshot="d566fbe479dab4bb3a0ffee86ec67269" Selector="&lt;webctrl id='PegaGadget2Ifr' tag='IFRAME' /&gt;&lt;webctrl id='headerlabel3459' tag='DIV' /&gt;">
+                                                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="136daf46-8745-4bf4-b300-890e61964faf" InformativeScreenshot="859290ed1a38745f6a677894a01e33ea" Selector="&lt;webctrl aaname='CONTACT/NOTES' innertext='CONTACT/NOTES' parentclass='header' /&gt;">
                                                                                       <ui:Target.TimeoutMS>
                                                                                         <InArgument x:TypeArguments="x:Int32" />
                                                                                       </ui:Target.TimeoutMS>
@@ -964,7 +958,7 @@
                                                                             </ActivityAction>
                                                                           </ui:BrowserScope.Body>
                                                                         </ui:BrowserScope>
-                                                                        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Window - Pop up note" sap:VirtualizedContainerService.HintSize="435,866" sap2010:WorkflowViewState.IdRef="BrowserScope_35" InformativeScreenshot="ae39e5d1785d45d45b2d9d9fd1d12a14" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='tse.ahtraining.services.demeter.zeus.gsi.gov.uk/prweb/**' /&gt;&lt;wnd cls='Intermediate D3D Window' /&gt;">
+                                                                        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Window - Pop up note" sap:VirtualizedContainerService.HintSize="435,866" sap2010:WorkflowViewState.IdRef="BrowserScope_35" InformativeScreenshot="ae39e5d1785d45d45b2d9d9fd1d12a14" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='tse.ahtraining.services.demeter.zeus.gsi.gov.uk/prweb/**' /&gt;&lt;wnd cls='Intermediate D3D Window' /&gt;">
                                                                           <ui:BrowserScope.Body>
                                                                             <ActivityAction x:TypeArguments="x:Object">
                                                                               <ActivityAction.Argument>
@@ -1142,7 +1136,7 @@
                                                                                       <av:Size x:Key="ShapeSize">200,51</av:Size>
                                                                                     </scg:Dictionary>
                                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                                  <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="End Research" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="BrowserScope_36" InformativeScreenshot="8e91ebb2cd850ced6838ffb82f811689" Selector="&lt;html app='chrome.exe' htmlwindowname='Composite_HS31XVJMQJAK541ME53FBJQREBS3JHE7WA' title='Animal Health Portal' /&gt;">
+                                                                                  <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_SAMBrowser]" BrowserType="Edge" DisplayName="End Research" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="BrowserScope_36" InformativeScreenshot="8e91ebb2cd850ced6838ffb82f811689">
                                                                                     <ui:BrowserScope.Body>
                                                                                       <ActivityAction x:TypeArguments="x:Object">
                                                                                         <ActivityAction.Argument>
@@ -1188,7 +1182,7 @@
                                                                                               </ui:CursorPosition>
                                                                                             </ui:Click.CursorPosition>
                                                                                             <ui:Click.Target>
-                                                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c2dfcb7c-ae31-4ce9-8215-6e9e4d7b26e7" InformativeScreenshot="77ecea59d895bc000fb21373873cc6a5" Selector="&lt;webctrl id='PegaGadget2Ifr' tag='IFRAME' /&gt;&lt;webctrl name='pyCaseActionAreaButtons_pyWorkPage_10' tag='BUTTON' /&gt;">
+                                                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c2dfcb7c-ae31-4ce9-8215-6e9e4d7b26e7" InformativeScreenshot="77ecea59d895bc000fb21373873cc6a5" Selector="&lt;webctrl tag='BUTTON' aaname='Click here to submit the action' innertext='Submit' /&gt;">
                                                                                                 <ui:Target.TimeoutMS>
                                                                                                   <InArgument x:TypeArguments="x:Int32" />
                                                                                                 </ui:Target.TimeoutMS>
