@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "E/Uc4cAQA7D77zsJ9S1BbDu1Nyb/wOzegaRypxdVFZHDJGcUx3+yuNJ1MWw+0hPAwgXymggPV2It5nJdiwE7Cw==",
+  "dgSpecHash": "DXoQgLRdtlo4AKdpzFUVPUFvkx6HDrNmMDdSCt+DBQMO3IU1t6k3sO2AM4QkOc3ejXNismRrRCGby7/ReL5Mfw==",
   "success": true,
   "projectFilePath": "C:\\Users\\m1011226\\Documents\\GitHub\\apha-welsh-gov-cph-registrations\\Welsh Gov CPH\\.local\\",
   "expectedPackageFiles": [
@@ -50,7 +50,7 @@
     "C:\\Users\\m1011226\\.nuget\\packages\\oracle.manageddataaccess\\19.11.0\\oracle.manageddataaccess.19.11.0.nupkg.sha512",
     "C:\\Users\\m1011226\\.nuget\\packages\\pop.ups\\1.0.3\\pop.ups.1.0.3.nupkg.sha512",
     "C:\\Users\\m1011226\\.nuget\\packages\\restsharp\\106.6.10\\restsharp.106.6.10.nupkg.sha512",
-    "C:\\Users\\m1011226\\.nuget\\packages\\sam.reuseable.components\\1.0.7-alpha\\sam.reuseable.components.1.0.7-alpha.nupkg.sha512",
+    "C:\\Users\\m1011226\\.nuget\\packages\\sam.reuseable.components\\1.0.7-alpha.2\\sam.reuseable.components.1.0.7-alpha.2.nupkg.sha512",
     "C:\\Users\\m1011226\\.nuget\\packages\\sharpziplib\\1.2.0\\sharpziplib.1.2.0.nupkg.sha512",
     "C:\\Users\\m1011226\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\m1011226\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",

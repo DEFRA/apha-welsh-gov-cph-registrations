@@ -2,7 +2,7 @@
   <x:Members>
     <x:Property Name="OUT_AnimalType" Type="OutArgument(sd:DataTable)" />
     <x:Property Name="IN_SAMBrowser" Type="InArgument(ui:Browser)" />
-    <x:Property Name="OUT_dtAnimalSpecies" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="OUT_AnimalSpecies" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <this:Main.IN_SAMBrowser>
     <InArgument x:TypeArguments="ui:Browser" />
@@ -199,7 +199,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[OUT_dtAnimalSpecies]" DisplayName="Extract Structured DataTable" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ExtractData_3" MaxNumberOfResults="0" SimulateClick="True">
+            <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[OUT_AnimalSpecies]" DisplayName="Extract Structured DataTable" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ExtractData_3" MaxNumberOfResults="0" SimulateClick="True">
               <ui:ExtractData.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="48fddb38-3a01-48a1-94ac-639cde452f3f" InformativeScreenshot="356fed99a2c34d792d29d2ba74679fc5" Selector="&lt;webctrl aaname='ID NumberEnter to sort Animal SpeciesEnter to sort Herd / Flock *' id='bodyTbl_right' tag='TABLE' /&gt;" WaitForReady="COMPLETE">
                   <ui:Target.TimeoutMS>
@@ -208,7 +208,7 @@
                 </ui:Target>
               </ui:ExtractData.Target>
             </ui:ExtractData>
-            <ui:FilterDataTable DataTable="[OUT_dtAnimalSpecies]" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="334,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[OUT_AnimalType]" SelectColumnsMode="Keep">
+            <ui:FilterDataTable DataTable="[OUT_AnimalSpecies]" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="334,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[OUT_AnimalType]" SelectColumnsMode="Keep">
               <ui:FilterDataTable.Filters>
                 <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                   <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="LT" />
