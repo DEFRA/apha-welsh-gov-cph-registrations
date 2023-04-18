@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1033,1485</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>587,1485</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -98,7 +98,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser SAM" sap:VirtualizedContainerService.HintSize="434,1328" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="e2d2ab6a01090146ed8f87ceff8d54d0" Selector="&lt;html app='chrome.exe' htmlwindowname='Composite_HS31XVJMQJAK541ME53FBJQREBS3JHE7WA' title='Animal Health Portal' /&gt;">
+    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[IN_SAMBrowser]" BrowserType="Edge" DisplayName="Attach Browser SAM" sap:VirtualizedContainerService.HintSize="434,1328" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="e2d2ab6a01090146ed8f87ceff8d54d0">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>

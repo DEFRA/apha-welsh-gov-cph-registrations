@@ -13,7 +13,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1033,835</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>636,835</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Process_Transaction_2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -86,6 +86,7 @@
       <AssemblyReference>System.Configuration.Install</AssemblyReference>
       <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="646,770" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -181,9 +182,26 @@
             <av:PointCollection x:Key="ConnectorLocation">485,421.02 485,451.02 300,451.02 300,596.04</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Permanent Type 2 workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Process\Process Subflows\Permanent\Permanent Type 2.xaml">
+        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Permanent Type 2 workflow" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Process\Process Subflows\Permanent\Permanent Type 2.xaml">
           <ui:InvokeWorkflowFile.Arguments>
-            <scg:Dictionary x:TypeArguments="x:String, Argument" />
+            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_TransactionItem">
+              <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="in_TransactionItem" />
+            </InArgument>
+            <InOutArgument x:TypeArguments="s:Int32[]" x:Key="io_arrExitPoint">
+              <mva:VisualBasicReference x:TypeArguments="s:Int32[]" ExpressionText="io_arrExitPoint" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="sd1:Stopwatch" x:Key="io_swProcessingTimer">
+              <mva:VisualBasicReference x:TypeArguments="sd1:Stopwatch" ExpressionText="io_swProcessingTimer" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="io_Config">
+              <mva:VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="io_Config" />
+            </InOutArgument>
+            <InArgument x:TypeArguments="ui:Browser" x:Key="in_SAMBrowser">
+              <mva:VisualBasicValue x:TypeArguments="ui:Browser" ExpressionText="browsSAM" />
+            </InArgument>
+            <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="io_TaskIDs">
+              <mva:VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="io_TaskIDs" />
+            </InOutArgument>
           </ui:InvokeWorkflowFile.Arguments>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
