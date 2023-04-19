@@ -534,7 +534,7 @@
     {
       "Package": {
         "Id": "SAM.Reuseable.Components",
-        "Version": "1.0.6"
+        "Version": "1.0.7"
       },
       "Assemblies": [
         "C:\\Users\\m1006120\\.nuget\\packages\\avalonedit\\6.0.1\\lib/net45/ICSharpCode.AvalonEdit.dll",
@@ -587,16 +587,19 @@
         "C:\\Users\\m1006120\\.nuget\\packages\\npoi\\2.4.1\\lib/net45/NPOI.dll",
         "C:\\Users\\m1006120\\.nuget\\packages\\pop.ups\\1.0.3\\lib/net45/Pop Ups.dll",
         "C:\\Users\\m1006120\\.nuget\\packages\\restsharp\\106.6.10\\lib/net452/RestSharp.dll",
-        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.6\\lib/net45/SAM Reuseable Components.dll",
-        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.6\\lib/net45/SAM Reuseable Components_Expressions_11240144.dll",
-        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.6\\lib/net45/SAM Reuseable Components_Expressions_15337401.dll",
-        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.6\\lib/net45/SAM Reuseable Components_Expressions_19659738.dll",
-        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.6\\lib/net45/SAM Reuseable Components_Expressions_28123336.dll",
-        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.6\\lib/net45/SAM Reuseable Components_Expressions_3231036.dll",
-        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.6\\lib/net45/SAM Reuseable Components_Expressions_35217757.dll",
-        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.6\\lib/net45/SAM Reuseable Components_Expressions_35586740.dll",
-        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.6\\lib/net45/SAM Reuseable Components_Expressions_40381582.dll",
-        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.6\\lib/net45/SAM Reuseable Components_Expressions_51408035.dll",
+        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.7\\lib/net45/SAM Reuseable Components.dll",
+        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.7\\lib/net45/SAM Reuseable Components_Expressions_13896890.dll",
+        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.7\\lib/net45/SAM Reuseable Components_Expressions_20726372.dll",
+        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.7\\lib/net45/SAM Reuseable Components_Expressions_23843727.dll",
+        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.7\\lib/net45/SAM Reuseable Components_Expressions_35903099.dll",
+        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.7\\lib/net45/SAM Reuseable Components_Expressions_38955487.dll",
+        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.7\\lib/net45/SAM Reuseable Components_Expressions_48222659.dll",
+        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.7\\lib/net45/SAM Reuseable Components_Expressions_5067808.dll",
+        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.7\\lib/net45/SAM Reuseable Components_Expressions_5089121.dll",
+        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.7\\lib/net45/SAM Reuseable Components_Expressions_51795722.dll",
+        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.7\\lib/net45/SAM Reuseable Components_Expressions_54818362.dll",
+        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.7\\lib/net45/SAM Reuseable Components_Expressions_710071.dll",
+        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.7\\lib/net45/SAM Reuseable Components_Expressions_9071334.dll",
         "C:\\Users\\m1006120\\.nuget\\packages\\sharpziplib\\1.2.0\\lib/net45/ICSharpCode.SharpZipLib.dll",
         "C:\\Users\\m1006120\\.nuget\\packages\\system.buffers\\4.5.1\\lib/net461/System.Buffers.dll",
         "C:\\Users\\m1006120\\.nuget\\packages\\system.collections.immutable\\5.0.0\\lib/net461/System.Collections.Immutable.dll",
@@ -693,7 +696,7 @@
         "C:\\Users\\m1006120\\.nuget\\packages\\uipath.webapi.activities\\1.9.2\\lib/net461/UiPath.Web.Activities.dll",
         "C:\\Users\\m1006120\\.nuget\\packages\\uipath.webapi.activities\\1.9.2\\lib/net461/UiPath.Web.dll"
       ],
-      "Path": "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.6"
+      "Path": "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.7"
     }
   ],
   "Conflicts": [],
@@ -1265,7 +1268,7 @@
     },
     "SAM.Reuseable.Components": {
       "Id": "SAM.Reuseable.Components",
-      "Version": "1.0.6",
+      "Version": "1.0.7",
       "Dependencies": [
         {
           "Item1": "Credentials",
@@ -2322,21 +2325,24 @@
     {
       "Package": {
         "Id": "SAM.Reuseable.Components",
-        "Version": "1.0.6"
+        "Version": "1.0.7"
       },
       "Assemblies": [
-        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.6\\lib\\net45\\SAM Reuseable Components.dll",
-        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.6\\lib\\net45\\SAM Reuseable Components_Expressions_11240144.dll",
-        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.6\\lib\\net45\\SAM Reuseable Components_Expressions_15337401.dll",
-        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.6\\lib\\net45\\SAM Reuseable Components_Expressions_19659738.dll",
-        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.6\\lib\\net45\\SAM Reuseable Components_Expressions_28123336.dll",
-        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.6\\lib\\net45\\SAM Reuseable Components_Expressions_3231036.dll",
-        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.6\\lib\\net45\\SAM Reuseable Components_Expressions_35217757.dll",
-        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.6\\lib\\net45\\SAM Reuseable Components_Expressions_35586740.dll",
-        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.6\\lib\\net45\\SAM Reuseable Components_Expressions_40381582.dll",
-        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.6\\lib\\net45\\SAM Reuseable Components_Expressions_51408035.dll"
+        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.7\\lib\\net45\\SAM Reuseable Components.dll",
+        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.7\\lib\\net45\\SAM Reuseable Components_Expressions_13896890.dll",
+        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.7\\lib\\net45\\SAM Reuseable Components_Expressions_20726372.dll",
+        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.7\\lib\\net45\\SAM Reuseable Components_Expressions_23843727.dll",
+        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.7\\lib\\net45\\SAM Reuseable Components_Expressions_35903099.dll",
+        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.7\\lib\\net45\\SAM Reuseable Components_Expressions_38955487.dll",
+        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.7\\lib\\net45\\SAM Reuseable Components_Expressions_48222659.dll",
+        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.7\\lib\\net45\\SAM Reuseable Components_Expressions_5067808.dll",
+        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.7\\lib\\net45\\SAM Reuseable Components_Expressions_5089121.dll",
+        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.7\\lib\\net45\\SAM Reuseable Components_Expressions_51795722.dll",
+        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.7\\lib\\net45\\SAM Reuseable Components_Expressions_54818362.dll",
+        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.7\\lib\\net45\\SAM Reuseable Components_Expressions_710071.dll",
+        "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.7\\lib\\net45\\SAM Reuseable Components_Expressions_9071334.dll"
       ],
-      "Path": "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.6"
+      "Path": "C:\\Users\\m1006120\\.nuget\\packages\\sam.reuseable.components\\1.0.7"
     },
     {
       "Package": {

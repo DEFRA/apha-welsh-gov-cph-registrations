@@ -13,7 +13,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1173,1495</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1135,1538</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetTransactionData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="38">
@@ -95,7 +95,6 @@
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>Pop Ups</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart sap2010:Annotation.AnnotationText="Get a transaction item from a specified source (e.g., Orchestrator queues, spreadsheets, databases, mailboxes or web APIs). &#xA;&#xA;This framework is setup by default to look for an Outlook MailMessage from a config-specified mailbox, this should be changed on a work package basis with out_TransactionItem being set to a single transaction from whatever source is required.&#xA;&#xA;If there are no transaction items remaining, out_TransactionItem should be set to Nothing, which leads to the End Process state. &#xA;&#xA;out_boolLastTransaction should be set to True where it is possible to determine that a transaction is the last in the batch. If this is not possible to derive then changes will need to be made to the &quot;Final Transaction&quot; transition at the framework's parent level. " DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="1145,1473" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -224,7 +223,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">590,693 590,743</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Extract Next File Transactions" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <Sequence DisplayName="Extract Next File Transactions" sap:VirtualizedContainerService.HintSize="518,2369" sap2010:WorkflowViewState.IdRef="Sequence_10">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -401,19 +400,11 @@
                   <ui:Comment sap:VirtualizedContainerService.HintSize="434,74" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Also removes all types aside from 1 right now as the code isn't in place for the others." />
                   <ui:FilterDataTable DataTable="[io_TransactionData]" DisplayName="Remove Completed Rows" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="434,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[io_TransactionData]" SelectColumnsMode="Keep">
                     <ui:FilterDataTable.Filters>
-                      <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="8">
+                      <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                         <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="NOTEMPTY">
                           <ui:FilterOperationArgument.Column>
                             <InArgument x:TypeArguments="x:String">["Completed by - Initials &amp; Date"]</InArgument>
                           </ui:FilterOperationArgument.Column>
-                        </ui:FilterOperationArgument>
-                        <ui:FilterOperationArgument BooleanOperator="Or" Operator="EQ">
-                          <ui:FilterOperationArgument.Column>
-                            <InArgument x:TypeArguments="x:String">["Change Type"]</InArgument>
-                          </ui:FilterOperationArgument.Column>
-                          <ui:FilterOperationArgument.Operand>
-                            <InArgument x:TypeArguments="x:Int32">[2]</InArgument>
-                          </ui:FilterOperationArgument.Operand>
                         </ui:FilterOperationArgument>
                         <ui:FilterOperationArgument BooleanOperator="Or" Operator="EQ">
                           <ui:FilterOperationArgument.Column>
@@ -450,10 +441,7 @@
                 </Sequence>
               </Sequence>
               <FlowStep.Next>
-                <FlowDecision x:Name="__ReferenceID8" DisplayName="Rows to Process?" sap:VirtualizedContainerService.HintSize="96,87" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
-                  <FlowDecision.Condition>
-                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="io_TransactionData.RowCount &gt; 0" />
-                  </FlowDecision.Condition>
+                <FlowDecision x:Name="__ReferenceID8" Condition="[io_TransactionData.RowCount &gt; 0]" DisplayName="Rows to Process?" sap:VirtualizedContainerService.HintSize="96,87" sap2010:WorkflowViewState.IdRef="FlowDecision_5" True="{x:Reference __ReferenceID0}">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -465,14 +453,8 @@
                       <av:PointCollection x:Key="FalseConnector">638,786.5 841.5,786.5 841.5,703.5</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <FlowDecision.True>
-                    <x:Reference>__ReferenceID0</x:Reference>
-                  </FlowDecision.True>
                   <FlowDecision.False>
-                    <FlowDecision x:Name="__ReferenceID9" DisplayName="More Files to Process?" sap:VirtualizedContainerService.HintSize="122,87" sap2010:WorkflowViewState.IdRef="FlowDecision_6">
-                      <FlowDecision.Condition>
-                        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="io_listFileInfo.Count &gt; 0" />
-                      </FlowDecision.Condition>
+                    <FlowDecision x:Name="__ReferenceID9" Condition="[io_listFileInfo.Count &gt; 0]" DisplayName="More Files to Process?" sap:VirtualizedContainerService.HintSize="122,87" sap2010:WorkflowViewState.IdRef="FlowDecision_6" True="{x:Reference __ReferenceID1}">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -484,9 +466,6 @@
                           <av:PointCollection x:Key="FalseConnector">902.5,660 980,660 980,1010</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <FlowDecision.True>
-                        <x:Reference>__ReferenceID1</x:Reference>
-                      </FlowDecision.True>
                       <FlowDecision.False>
                         <FlowStep x:Name="__ReferenceID2">
                           <sap:WorkflowViewStateService.ViewState>
