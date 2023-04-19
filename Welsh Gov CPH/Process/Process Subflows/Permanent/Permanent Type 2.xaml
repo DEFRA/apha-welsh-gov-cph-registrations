@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1151,2677</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1033,2677</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Type_1_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -108,11 +108,12 @@
       <Variable x:TypeArguments="x:Boolean" Name="out_SpeciesExists" />
       <Variable x:TypeArguments="x:String" Name="strAnimalSpecies" />
       <Variable x:TypeArguments="x:Boolean" Name="booSpeciesExists" />
-      <Variable x:TypeArguments="x:Boolean" Name="booNoMatchingData" />
+      <Variable x:TypeArguments="x:Boolean" Name="booLocationExists" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtAnimalSpecies" />
       <Variable x:TypeArguments="x:String" Name="strEndDate" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtAnimalType" />
       <Variable x:TypeArguments="ui:Browser" Name="browPopUp" />
+      <Variable x:TypeArguments="x:String" Name="strLocationID" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -370,7 +371,7 @@
                                           <av:PointCollection x:Key="ConnectorLocation">300,688.5 300,738.5</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Verify whether species is still listed" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Process\Process Subflows\SAM Components\Verify whether species is still listed.xaml">
+                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Verify whether species is still listed" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Process\Process Subflows\SAM Components\Verify whether species is still listed.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
                                           <InArgument x:TypeArguments="x:String" x:Key="IN_AnimalSpecies">[strAnimalSpecies]</InArgument>
                                           <InArgument x:TypeArguments="ui:Browser" x:Key="IN_SAMBrowser">[in_SAMBrowser]</InArgument>
@@ -680,7 +681,7 @@
                                   <av:PointCollection x:Key="ConnectorLocation">295.5,956 295.5,1006</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <seu:Update_Unit_Location OUT_LocationName="{x:Null}" DisplayName="Update Unit Location" sap:VirtualizedContainerService.HintSize="200,22" IN_EffectiveDate="[strEndDate]" IN_NewStatus="Inactive" IN_SAMBrowser="[in_SAMBrowser]" IN_StatusReason="Usage no longer of interest to AH" IN_UpdateLocationStatus="Update Location Status" sap2010:WorkflowViewState.IdRef="Update_Unit_Location_1" io_TaskIDs="[io_TaskIDs]">
+                              <seu:Update_Unit_Location OUT_LocationName="{x:Null}" DisplayName="Update Unit Location" sap:VirtualizedContainerService.HintSize="200,22" IN_EffectiveDate="[strEndDate]" IN_NewStatus="Inactive" IN_SAMBrowser="[in_SAMBrowser]" IN_StatusReason="Usage no longer of interest to AH" IN_UpdateLocationStatus="Update Location Status" sap2010:WorkflowViewState.IdRef="Update_Unit_Location_1" OUT_LocationID="[strLocationID]" io_TaskIDs="[io_TaskIDs]">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -900,10 +901,17 @@
                                                   <av:PointCollection x:Key="ConnectorLocation">310,1426.5 310,1476.5</av:PointCollection>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Verify whether the location has been removed workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Process\Process Subflows\SAM Components\Verify whether the location has been removed.xaml">
+                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Verify whether the location has been removed workflow" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Process\Process Subflows\SAM Components\Verify whether the location has been removed.xaml">
                                                 <ui:InvokeWorkflowFile.Arguments>
-                                                  <InArgument x:TypeArguments="x:Boolean" x:Key="OUT_NoMatchingData">[booNoMatchingData]</InArgument>
-                                                  <InArgument x:TypeArguments="ui:Browser" x:Key="IN_SAMBrowser">[in_SAMBrowser]</InArgument>
+                                                  <InArgument x:TypeArguments="ui:Browser" x:Key="IN_SAMBrowser">
+                                                    <mva:VisualBasicValue x:TypeArguments="ui:Browser" ExpressionText="in_SAMBrowser" />
+                                                  </InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="IN_LocationID">
+                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strLocationID" />
+                                                  </InArgument>
+                                                  <InArgument x:TypeArguments="x:Boolean" x:Key="OUT_LocationIDExists">
+                                                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="booLocationExists" />
+                                                  </InArgument>
                                                 </ui:InvokeWorkflowFile.Arguments>
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -913,7 +921,10 @@
                                                 </sap:WorkflowViewStateService.ViewState>
                                               </ui:InvokeWorkflowFile>
                                               <FlowStep.Next>
-                                                <FlowDecision x:Name="__ReferenceID19" Condition="[booNoMatchingData = False]" DisplayName="Location found?" sap:VirtualizedContainerService.HintSize="92,87" sap2010:WorkflowViewState.IdRef="FlowDecision_26">
+                                                <FlowDecision x:Name="__ReferenceID19" DisplayName="Location found?" sap:VirtualizedContainerService.HintSize="92,87" sap2010:WorkflowViewState.IdRef="FlowDecision_26">
+                                                  <FlowDecision.Condition>
+                                                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="booLocationExists = True" />
+                                                  </FlowDecision.Condition>
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
