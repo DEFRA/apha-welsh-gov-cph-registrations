@@ -237,7 +237,7 @@
               <av:PointCollection x:Key="ConnectorLocation">300,250.5 300,300.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ses:Complete_CPH_Search DisplayName="Complete CPH Search" sap:VirtualizedContainerService.HintSize="200,22" IN_CPHNumber="[in_TransactionItem(0)(&quot;CPH&quot;).ToString]" IN_UiBrowser="[in_SAMBrowser]" sap2010:WorkflowViewState.IdRef="Complete_CPH_Search_3" OUT_NoOfRecords="[intNoOfRecords]">
+          <ses:Complete_CPH_Search DisplayName="Complete CPH Search" sap:VirtualizedContainerService.HintSize="200,22" IN_CPHNumber="[in_TransactionItem(0)(&quot;CPH&quot;).ToString]" IN_UiBrowser="[in_SAMBrowser]" sap2010:WorkflowViewState.IdRef="Complete_CPH_Search_3" OUT_NoOfRecords="[intNoOfRecords]" in_SearchArchived="No">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
