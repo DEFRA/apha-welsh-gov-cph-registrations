@@ -3421,7 +3421,7 @@
                                                                                                                 <OutArgument x:TypeArguments="x:Int32">[io_arrExitPoint(0)]</OutArgument>
                                                                                                               </Assign.To>
                                                                                                               <Assign.Value>
-                                                                                                                <InArgument x:TypeArguments="x:Int32">3</InArgument>
+                                                                                                                <InArgument x:TypeArguments="x:Int32">5</InArgument>
                                                                                                               </Assign.Value>
                                                                                                               <sap:WorkflowViewStateService.ViewState>
                                                                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
