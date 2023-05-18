@@ -393,7 +393,7 @@
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:Click DelayMS="{x:Null}" SendWindowMessages="{x:Null}" AlterIfDisabled="False" ClickType="CLICK_SINGLE" ContinueOnError="True" DelayBefore="2000" DisplayName="Click Submit" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_70" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                                      <ui:Click DelayMS="{x:Null}" SendWindowMessages="{x:Null}" AlterIfDisabled="False" ClickType="CLICK_SINGLE" DelayBefore="2000" DisplayName="Click Submit" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_70" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                                         <ui:Click.CursorPosition>
                                           <ui:CursorPosition Position="Center">
                                             <ui:CursorPosition.OffsetX>
@@ -475,7 +475,7 @@
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:Click DelayMS="{x:Null}" SendWindowMessages="{x:Null}" AlterIfDisabled="False" ClickType="CLICK_SINGLE" ContinueOnError="True" DelayBefore="2000" DisplayName="Click Submit" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_71" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                                                <ui:Click DelayMS="{x:Null}" SendWindowMessages="{x:Null}" AlterIfDisabled="False" ClickType="CLICK_SINGLE" DelayBefore="2000" DisplayName="Click Submit" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_71" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                                                   <ui:Click.CursorPosition>
                                                     <ui:CursorPosition Position="Center">
                                                       <ui:CursorPosition.OffsetX>
@@ -543,7 +543,7 @@
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:Click DelayMS="{x:Null}" SendWindowMessages="{x:Null}" AlterIfDisabled="False" ClickType="CLICK_SINGLE" ContinueOnError="True" DelayBefore="2000" DisplayName="Click Submit" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_72" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                                              <ui:Click DelayMS="{x:Null}" SendWindowMessages="{x:Null}" AlterIfDisabled="False" ClickType="CLICK_SINGLE" DelayBefore="2000" DisplayName="Click Submit" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_72" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                                                 <ui:Click.CursorPosition>
                                                   <ui:CursorPosition Position="Center">
                                                     <ui:CursorPosition.OffsetX>
@@ -670,7 +670,7 @@
                                                       <av:PointCollection x:Key="ConnectorLocation">300,1435.5 300,1473.5</av:PointCollection>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_SAMBrowser]" BrowserType="Edge" DisplayName="Submit Location Review" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="BrowserScope_25">
+                                                  <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_SAMBrowser]" BrowserType="Edge" DisplayName="Submit Location Review" sap:VirtualizedContainerService.HintSize="434,552" sap2010:WorkflowViewState.IdRef="BrowserScope_25">
                                                     <ui:BrowserScope.Body>
                                                       <ActivityAction x:TypeArguments="x:Object">
                                                         <ActivityAction.Argument>
@@ -762,47 +762,30 @@
                                                               <av:PointCollection x:Key="ConnectorLocation">300,1596.5 300,1645.5</av:PointCollection>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                          <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_SAMBrowser]" BrowserType="Edge" DisplayName="End Research" sap:VirtualizedContainerService.HintSize="536,1546" sap2010:WorkflowViewState.IdRef="BrowserScope_29">
+                                                          <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_SAMBrowser]" BrowserType="Edge" DisplayName="End Research" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="BrowserScope_29">
                                                             <ui:BrowserScope.Body>
                                                               <ActivityAction x:TypeArguments="x:Object">
                                                                 <ActivityAction.Argument>
                                                                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                                                 </ActivityAction.Argument>
-                                                                <Sequence DisplayName="Interact with Browser" sap:VirtualizedContainerService.HintSize="502,1438" sap2010:WorkflowViewState.IdRef="Sequence_177">
+                                                                <Sequence DisplayName="Interact with Browser" sap:VirtualizedContainerService.HintSize="502,1083" sap2010:WorkflowViewState.IdRef="Sequence_177">
                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                  <ui:RetryScope DisplayName="Wait for Page to Load" sap:VirtualizedContainerService.HintSize="460,461" sap2010:WorkflowViewState.IdRef="RetryScope_20" NumberOfRetries="3" RetryInterval="00:00:00">
-                                                                    <ui:RetryScope.ActivityBody>
-                                                                      <ActivityAction>
-                                                                        <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="376,287" sap2010:WorkflowViewState.IdRef="Sequence_194">
-                                                                          <Sequence.Variables>
-                                                                            <Variable x:TypeArguments="ui:UiElement" Name="ActionDropdown" />
-                                                                          </Sequence.Variables>
-                                                                          <sap:WorkflowViewStateService.ViewState>
-                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                            </scg:Dictionary>
-                                                                          </sap:WorkflowViewStateService.ViewState>
-                                                                          <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Extract Take Action" FoundElement="[ActionDropdown]" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_19">
-                                                                            <ui:WaitUiElementAppear.Target>
-                                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b06ec4a8-5b99-4c8a-a8cd-697f43927a2f" Selector="&lt;webctrl tag='SELECT' aaname='  Take action  ' id='ActionOptions' innertext=' Select an action...*' /&gt;" TimeoutMS="2500">
-                                                                                <ui:Target.WaitForReady>
-                                                                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                                                </ui:Target.WaitForReady>
-                                                                              </ui:Target>
-                                                                            </ui:WaitUiElementAppear.Target>
-                                                                          </ui:WaitUiElementAppear>
-                                                                          <ui:WaitAttribute Attribute="selecteditem" AttributeValue="[&quot;Select Intent&quot;]" DisplayName="Page Loaded?" Element="[ActionDropdown]" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="WaitAttribute_6" TimeoutMS="0" />
-                                                                        </Sequence>
-                                                                      </ActivityAction>
-                                                                    </ui:RetryScope.ActivityBody>
-                                                                    <ui:RetryScope.Condition>
-                                                                      <ActivityFunc x:TypeArguments="x:Boolean" />
-                                                                    </ui:RetryScope.Condition>
-                                                                  </ui:RetryScope>
+                                                                  <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Wait for Completed Location Task" sap:VirtualizedContainerService.HintSize="460,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_24">
+                                                                    <ui:WaitUiElementAppear.Target>
+                                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5ef27ab7-efef-439b-9c32-bdfdea05a744" InformativeScreenshot="f60395a279ecea544647b185413f1ddf" Selector="&lt;webctrl id='PegaGadget1Ifr' tag='IFRAME' /&gt;&lt;webctrl name='*CompletedTasks*' tag='A' aaname='Update/Add Location' /&gt;">
+                                                                        <ui:Target.TimeoutMS>
+                                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                                        </ui:Target.TimeoutMS>
+                                                                        <ui:Target.WaitForReady>
+                                                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                                        </ui:Target.WaitForReady>
+                                                                      </ui:Target>
+                                                                    </ui:WaitUiElementAppear.Target>
+                                                                  </ui:WaitUiElementAppear>
                                                                   <Sequence DisplayName="End Research" sap:VirtualizedContainerService.HintSize="460,845" sap2010:WorkflowViewState.IdRef="Sequence_176">
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
