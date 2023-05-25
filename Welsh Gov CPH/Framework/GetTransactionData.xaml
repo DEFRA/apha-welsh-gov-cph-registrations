@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="GetTransactionData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:Pop_Ups;assembly=Pop Ups" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:sl="clr-namespace:System.Linq;assembly=System.Core" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GetTransactionData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:p="clr-namespace:Pop_Ups;assembly=Pop Ups" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:sl="clr-namespace:System.Linq;assembly=System.Core" xmlns:ufa="clr-namespace:UiPath.Form.Activities;assembly=UiPath.Form.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Sequential counter of transaction items." Name="in_TransactionNumber" Type="InArgument(x:Int32)" />
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
@@ -16,7 +16,7 @@
   <sap:VirtualizedContainerService.HintSize>1135,1538</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetTransactionData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="38">
+    <scg:List x:TypeArguments="x:String" Capacity="76">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -55,10 +55,13 @@
       <x:String>UiPath.Excel.Activities</x:String>
       <x:String>Pop_Ups</x:String>
       <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>UiPath.Form.Activities</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="37">
+    <sco:Collection x:TypeArguments="AssemblyReference">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -95,8 +98,9 @@
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>Pop Ups</AssemblyReference>
+      <AssemblyReference>UiPath.Form.Activities</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
-    </scg:List>
+    </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Flowchart sap2010:Annotation.AnnotationText="Get a transaction item from a specified source (e.g., Orchestrator queues, spreadsheets, databases, mailboxes or web APIs). &#xA;&#xA;This framework is setup by default to look for an Outlook MailMessage from a config-specified mailbox, this should be changed on a work package basis with out_TransactionItem being set to a single transaction from whatever source is required.&#xA;&#xA;If there are no transaction items remaining, out_TransactionItem should be set to Nothing, which leads to the End Process state. &#xA;&#xA;out_boolLastTransaction should be set to True where it is possible to determine that a transaction is the last in the batch. If this is not possible to derive then changes will need to be made to the &quot;Final Transaction&quot; transition at the framework's parent level. " DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="1145,1473" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <sap:WorkflowViewStateService.ViewState>
@@ -224,13 +228,13 @@
                   <av:PointCollection x:Key="ConnectorLocation">590,693 590,743</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Extract Next File Transactions" sap:VirtualizedContainerService.HintSize="518,2286" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <Sequence DisplayName="Extract Next File Transactions" sap:VirtualizedContainerService.HintSize="652,3474" sap2010:WorkflowViewState.IdRef="Sequence_10">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Get Next File &amp; Update List" sap:VirtualizedContainerService.HintSize="476,214" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                <Sequence DisplayName="Get Next File &amp; Update List" sap:VirtualizedContainerService.HintSize="610,214" sap2010:WorkflowViewState.IdRef="Sequence_11">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -246,13 +250,13 @@
                   </Assign>
                   <RemoveFromCollection x:TypeArguments="si:FileInfo" Collection="[io_listFileInfo]" DisplayName="Remove File from List" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="RemoveFromCollection`1_3" Item="[io_TransactionFile]" />
                 </Sequence>
-                <Sequence DisplayName="Extract &amp; Filter Data Rows" sap:VirtualizedContainerService.HintSize="476,1940" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence DisplayName="Extract &amp; Filter Data Rows" sap:VirtualizedContainerService.HintSize="610,3128" sap2010:WorkflowViewState.IdRef="Sequence_12">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign DisplayName="Reset Data Table" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_22">
+                  <Assign DisplayName="Reset Data Table" sap:VirtualizedContainerService.HintSize="568,60" sap2010:WorkflowViewState.IdRef="Assign_22">
                     <Assign.To>
                       <OutArgument x:TypeArguments="sd:DataTable">[io_TransactionData]</OutArgument>
                     </Assign.To>
@@ -260,7 +264,7 @@
                       <InArgument x:TypeArguments="sd:DataTable">[Nothing]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:ExcelApplicationScope Password="{x:Null}" AutoSave="False" CreateNewFile="False" DisplayName="Open File" sap:VirtualizedContainerService.HintSize="434,260" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" ReadOnly="True" Visible="False" WorkbookPath="[io_TransactionFile.FullName]">
+                  <ui:ExcelApplicationScope Password="{x:Null}" AutoSave="False" CreateNewFile="False" DisplayName="Open File" sap:VirtualizedContainerService.HintSize="568,260" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" ReadOnly="True" Visible="False" WorkbookPath="[io_TransactionFile.FullName]">
                     <ui:ExcelApplicationScope.Body>
                       <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                         <ActivityAction.Argument>
@@ -283,7 +287,7 @@
                       </ActivityAction>
                     </ui:ExcelApplicationScope.Body>
                   </ui:ExcelApplicationScope>
-                  <Sequence DisplayName="Add Row Number to Data" sap:VirtualizedContainerService.HintSize="434,554" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                  <Sequence DisplayName="Add Row Number to Data" sap:VirtualizedContainerService.HintSize="568,554" sap2010:WorkflowViewState.IdRef="Sequence_19">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -313,7 +317,7 @@
                       </ui:ForEachRow.Body>
                     </ui:ForEachRow>
                   </Sequence>
-                  <ui:FilterDataTable DataTable="[io_TransactionData]" DisplayName="Filter to Type 1, 2, 5, 8, 9 &amp; Multi-Type Rows" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[io_TransactionData]" SelectColumnsMode="Keep">
+                  <ui:FilterDataTable DataTable="[io_TransactionData]" DisplayName="Filter to Type 1, 2, 5, 8, 9 &amp; Multi-Type Rows" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="568,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[io_TransactionData]" SelectColumnsMode="Keep">
                     <ui:FilterDataTable.Filters>
                       <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="8">
                         <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -356,6 +360,14 @@
                             <InArgument x:TypeArguments="x:Int32">[9]</InArgument>
                           </ui:FilterOperationArgument.Operand>
                         </ui:FilterOperationArgument>
+                        <ui:FilterOperationArgument BooleanOperator="Or" Operator="CONTAINS">
+                          <ui:FilterOperationArgument.Column>
+                            <InArgument x:TypeArguments="x:String">["Change Type"]</InArgument>
+                          </ui:FilterOperationArgument.Column>
+                          <ui:FilterOperationArgument.Operand>
+                            <InArgument x:TypeArguments="x:String">[";"]</InArgument>
+                          </ui:FilterOperationArgument.Operand>
+                        </ui:FilterOperationArgument>
                       </scg:List>
                     </ui:FilterDataTable.Filters>
                     <ui:FilterDataTable.SelectColumns>
@@ -364,7 +376,7 @@
                       </scg:List>
                     </ui:FilterDataTable.SelectColumns>
                   </ui:FilterDataTable>
-                  <Sequence DisplayName="Sort Transaction Data" sap:VirtualizedContainerService.HintSize="434,423" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                  <Sequence DisplayName="Sort Transaction Data" sap:VirtualizedContainerService.HintSize="568,1600" sap2010:WorkflowViewState.IdRef="Sequence_15">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="sd:DataTable" Name="dtSortConfig" />
                       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Int32)" Name="dictSortOrder" />
@@ -374,14 +386,14 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:BuildDataTable sap2010:Annotation.AnnotationText="Create custom sort dictionary as we are not sorting in numerical order.&#xA;&#xA;Current requested order is 1 &gt; 2 &gt; 8 &gt; 5 &gt; 9" DataTable="[dtSortConfig]" DisplayName="Build Sort Config" sap:VirtualizedContainerService.HintSize="334,131" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Change_x0020_Type&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;SortOrder&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Change_x0020_Type&gt;1&lt;/Change_x0020_Type&gt;&#xA;    &lt;SortOrder&gt;1&lt;/SortOrder&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Change_x0020_Type&gt;2&lt;/Change_x0020_Type&gt;&#xA;    &lt;SortOrder&gt;2&lt;/SortOrder&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Change_x0020_Type&gt;8&lt;/Change_x0020_Type&gt;&#xA;    &lt;SortOrder&gt;3&lt;/SortOrder&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Change_x0020_Type&gt;5&lt;/Change_x0020_Type&gt;&#xA;    &lt;SortOrder&gt;4&lt;/SortOrder&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Change_x0020_Type&gt;9&lt;/Change_x0020_Type&gt;&#xA;    &lt;SortOrder&gt;5&lt;/SortOrder&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;">
+                    <ui:BuildDataTable sap2010:Annotation.AnnotationText="Create custom sort dictionary as we are not sorting in numerical order.&#xA;&#xA;Current requested order is 1 &gt; 2 &gt; 8 &gt; 5 &gt; 9" DataTable="[dtSortConfig]" DisplayName="Build Default Sort Config" sap:VirtualizedContainerService.HintSize="526,131" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Change_x0020_Type&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;SortOrder&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Change_x0020_Type&gt;1&lt;/Change_x0020_Type&gt;&#xA;    &lt;SortOrder&gt;1&lt;/SortOrder&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Change_x0020_Type&gt;2&lt;/Change_x0020_Type&gt;&#xA;    &lt;SortOrder&gt;2&lt;/SortOrder&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Change_x0020_Type&gt;8&lt;/Change_x0020_Type&gt;&#xA;    &lt;SortOrder&gt;3&lt;/SortOrder&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Change_x0020_Type&gt;5&lt;/Change_x0020_Type&gt;&#xA;    &lt;SortOrder&gt;4&lt;/SortOrder&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Change_x0020_Type&gt;9&lt;/Change_x0020_Type&gt;&#xA;    &lt;SortOrder&gt;5&lt;/SortOrder&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:BuildDataTable>
-                    <Assign DisplayName="Assign Sort Order Dictionary" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_24">
+                    <Assign DisplayName="Assign Sort Order Dictionary" sap:VirtualizedContainerService.HintSize="526,60" sap2010:WorkflowViewState.IdRef="Assign_24">
                       <Assign.To>
                         <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Int32)">[dictSortOrder]</OutArgument>
                       </Assign.To>
@@ -389,7 +401,76 @@
                         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Int32)">[dtSortConfig.AsEnumerable.ToDictionary(Function (x) x(0).ToString.Trim, Function (x) Convert.ToInt32(x(1)))]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <Assign DisplayName="Order Transaction Datatable" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_25">
+                    <Sequence sap2010:Annotation.AnnotationText="If Multi-Type Rows exist they must be added to the custom sort dictionary for the function to know where to place them." DisplayName="Check for Multi Type Rows" sap:VirtualizedContainerService.HintSize="526,1137" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="sd:DataTable" Name="dtMultiRowSorting" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:FilterDataTable DataTable="[io_TransactionData]" DisplayName="Filter to Multi-Type Rows" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="484,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_4" OutputDataTable="[dtMultiRowSorting]" SelectColumnsMode="Keep">
+                        <ui:FilterDataTable.Filters>
+                          <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                            <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
+                              <ui:FilterOperationArgument.Column>
+                                <InArgument x:TypeArguments="x:String">["Change Type"]</InArgument>
+                              </ui:FilterOperationArgument.Column>
+                              <ui:FilterOperationArgument.Operand>
+                                <InArgument x:TypeArguments="x:String">[";"]</InArgument>
+                              </ui:FilterOperationArgument.Operand>
+                            </ui:FilterOperationArgument>
+                          </scg:List>
+                        </ui:FilterDataTable.Filters>
+                        <ui:FilterDataTable.SelectColumns>
+                          <scg:List x:TypeArguments="InArgument" Capacity="4">
+                            <InArgument x:TypeArguments="x:String">["Change Type"]</InArgument>
+                          </scg:List>
+                        </ui:FilterDataTable.SelectColumns>
+                      </ui:FilterDataTable>
+                      <If Condition="[dtMultiRowSorting.RowCount &gt; 0]" DisplayName="Multi-Type Rows?" sap:VirtualizedContainerService.HintSize="484,803" sap2010:WorkflowViewState.IdRef="If_12">
+                        <If.Then>
+                          <Sequence DisplayName="Add Multi Type Ordering Metadata" sap:VirtualizedContainerService.HintSize="376,616" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:RemoveDuplicateRows DataTable="[dtMultiRowSorting]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_3" OutputDataTable="[dtMultiRowSorting]" />
+                            <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="SortOrder" DataTable="[dtMultiRowSorting]" DefaultValue="9999" DisplayName="Add Ordering Column" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_7" />
+                            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtMultiRowSorting]" DisplayName="Add Rows to Sort Dictionary" sap:VirtualizedContainerService.HintSize="334,180" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+                              <ui:ForEachRow.Body>
+                                <ActivityAction x:TypeArguments="sd:DataRow">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                                  </ActivityAction.Argument>
+                                  <Assign DisplayName="Assign dictSortOrder" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_39">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Int32">[dictSortOrder(CurrentRow.Item("Change Type").ToString)]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Int32">[Convert.ToInt32(CurrentRow.Item("SortOrder"))]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </ActivityAction>
+                              </ui:ForEachRow.Body>
+                            </ui:ForEachRow>
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_29">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                    <Assign DisplayName="Order Transaction Datatable" sap:VirtualizedContainerService.HintSize="526,60" sap2010:WorkflowViewState.IdRef="Assign_25">
                       <Assign.To>
                         <OutArgument x:TypeArguments="sd:DataTable">[io_TransactionData]</OutArgument>
                       </Assign.To>
@@ -398,9 +479,9 @@
                       </Assign.Value>
                     </Assign>
                   </Sequence>
-                  <ui:FilterDataTable sap2010:Annotation.AnnotationText="Also removes 5,8,9 until ready for Live Proving" DataTable="[io_TransactionData]" DisplayName="Remove Completed Rows" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="434,191" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[io_TransactionData]" SelectColumnsMode="Keep">
+                  <ui:FilterDataTable sap2010:Annotation.AnnotationText="Also removes 5,8,9 and multi-rows until ready for Live Proving" DataTable="[io_TransactionData]" DisplayName="Remove Completed Rows &amp; Unhandled Multi-Type" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="568,202" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[io_TransactionData]" SelectColumnsMode="Keep">
                     <ui:FilterDataTable.Filters>
-                      <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                      <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="8">
                         <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="NOTEMPTY">
                           <ui:FilterOperationArgument.Column>
                             <InArgument x:TypeArguments="x:String">["Completed by - Initials &amp; Date"]</InArgument>
@@ -411,7 +492,7 @@
                             <InArgument x:TypeArguments="x:String">["Change Type"]</InArgument>
                           </ui:FilterOperationArgument.Column>
                           <ui:FilterOperationArgument.Operand>
-                            <InArgument x:TypeArguments="x:String">["5"]</InArgument>
+                            <InArgument x:TypeArguments="x:Int32">[5]</InArgument>
                           </ui:FilterOperationArgument.Operand>
                         </ui:FilterOperationArgument>
                         <ui:FilterOperationArgument BooleanOperator="Or" Operator="EQ">
@@ -419,7 +500,7 @@
                             <InArgument x:TypeArguments="x:String">["Change Type"]</InArgument>
                           </ui:FilterOperationArgument.Column>
                           <ui:FilterOperationArgument.Operand>
-                            <InArgument x:TypeArguments="x:String">["8"]</InArgument>
+                            <InArgument x:TypeArguments="x:Int32">[8]</InArgument>
                           </ui:FilterOperationArgument.Operand>
                         </ui:FilterOperationArgument>
                         <ui:FilterOperationArgument BooleanOperator="Or" Operator="EQ">
@@ -427,7 +508,31 @@
                             <InArgument x:TypeArguments="x:String">["Change Type"]</InArgument>
                           </ui:FilterOperationArgument.Column>
                           <ui:FilterOperationArgument.Operand>
-                            <InArgument x:TypeArguments="x:String">["9"]</InArgument>
+                            <InArgument x:TypeArguments="x:Int32">[9]</InArgument>
+                          </ui:FilterOperationArgument.Operand>
+                        </ui:FilterOperationArgument>
+                        <ui:FilterOperationArgument BooleanOperator="Or" Operator="EQ">
+                          <ui:FilterOperationArgument.Column>
+                            <InArgument x:TypeArguments="x:String">["Change Type"]</InArgument>
+                          </ui:FilterOperationArgument.Column>
+                          <ui:FilterOperationArgument.Operand>
+                            <InArgument x:TypeArguments="x:String">["02;07"]</InArgument>
+                          </ui:FilterOperationArgument.Operand>
+                        </ui:FilterOperationArgument>
+                        <ui:FilterOperationArgument BooleanOperator="Or" Operator="EQ">
+                          <ui:FilterOperationArgument.Column>
+                            <InArgument x:TypeArguments="x:String">["Change Type"]</InArgument>
+                          </ui:FilterOperationArgument.Column>
+                          <ui:FilterOperationArgument.Operand>
+                            <InArgument x:TypeArguments="x:String">["01;02"]</InArgument>
+                          </ui:FilterOperationArgument.Operand>
+                        </ui:FilterOperationArgument>
+                        <ui:FilterOperationArgument BooleanOperator="Or" Operator="CONTAINS">
+                          <ui:FilterOperationArgument.Column>
+                            <InArgument x:TypeArguments="x:String">["Change Type"]</InArgument>
+                          </ui:FilterOperationArgument.Column>
+                          <ui:FilterOperationArgument.Operand>
+                            <InArgument x:TypeArguments="x:String">[";"]</InArgument>
                           </ui:FilterOperationArgument.Operand>
                         </ui:FilterOperationArgument>
                       </scg:List>
@@ -524,15 +629,127 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Assign DisplayName="Assign Directory Info" sap:VirtualizedContainerService.HintSize="562,60" sap2010:WorkflowViewState.IdRef="Assign_15">
-          <Assign.To>
-            <OutArgument x:TypeArguments="si:DirectoryInfo">[dirToProcessFolder]</OutArgument>
-          </Assign.To>
-          <Assign.Value>
-            <InArgument x:TypeArguments="si:DirectoryInfo">[New DirectoryInfo(in_Config("ToProcess").ToString)]</InArgument>
-          </Assign.Value>
-        </Assign>
-        <Assign DisplayName="Retrieve CPH Template Files" sap:VirtualizedContainerService.HintSize="562,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+        <Sequence DisplayName="Select Spreadsheet Folder" sap:VirtualizedContainerService.HintSize="591,1518" sap2010:WorkflowViewState.IdRef="Sequence_27">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="si:DirectoryInfo" Name="dirParentFolder" />
+            <Variable x:TypeArguments="scg:List(si:DirectoryInfo)" Name="listFolders" />
+            <Variable x:TypeArguments="x:String" Name="strFormOutput" />
+            <Variable x:TypeArguments="x:Boolean" Name="boolDis" />
+            <Variable x:TypeArguments="x:String" Name="strSelectedButton" />
+            <Variable x:TypeArguments="scg:List(x:String)" Name="listFolderNames" />
+            <Variable x:TypeArguments="njl:JObject" Name="jobFormOutput" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="Assign Parent Directory Info" sap:VirtualizedContainerService.HintSize="549,60" sap2010:WorkflowViewState.IdRef="Assign_34">
+            <Assign.To>
+              <OutArgument x:TypeArguments="si:DirectoryInfo">[dirParentFolder]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="si:DirectoryInfo">[New DirectoryInfo("C:\Users\m1006120\Documents\Welsh Gov CPH\Data")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign Spreadsheet Folder Info" sap:VirtualizedContainerService.HintSize="549,60" sap2010:WorkflowViewState.IdRef="Assign_35">
+            <Assign.To>
+              <OutArgument x:TypeArguments="scg:List(si:DirectoryInfo)">[listFolders]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="scg:List(si:DirectoryInfo)">[dirParentFolder.GetDirectories("*Spreadsheets*").ToList]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Initialise Folder Names List" sap:VirtualizedContainerService.HintSize="549,60" sap2010:WorkflowViewState.IdRef="Assign_36">
+            <Assign.To>
+              <OutArgument x:TypeArguments="scg:List(x:String)">[listFolderNames]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="scg:List(x:String)">[New List(Of String)]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:ForEach x:TypeArguments="si:DirectoryInfo" CurrentIndex="{x:Null}" DisplayName="For Each Folder" sap:VirtualizedContainerService.HintSize="549,184" sap2010:WorkflowViewState.IdRef="ForEach`1_7" Values="[listFolders]">
+            <ui:ForEach.Body>
+              <ActivityAction x:TypeArguments="si:DirectoryInfo">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="si:DirectoryInfo" Name="item" />
+                </ActivityAction.Argument>
+                <AddToCollection x:TypeArguments="x:String" Collection="[listFolderNames]" DisplayName="Add Folder Name to List" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_2" Item="[item.Name]" />
+              </ActivityAction>
+            </ui:ForEach.Body>
+          </ui:ForEach>
+          <ufa:FormActivity CreateFormActivityFileName="{x:Null}" CreateFormActivityFilePath="{x:Null}" FormFieldsInputData="{x:Null}" IconPath="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" CreateFormId="df5dfef4-0aa4-4e3b-bfe0-aa2b77595120" DisableMaximizeButton="False" DisableMinimizeButton="False" DisableSanitize="False" Dismissed="[boolDis]" DisplayName="Present Folder Select Form" FormFieldsOutputData="[strFormOutput]" FormHeight="375" FormSchema="%[{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;&lt;h1&gt;Select Spreadsheet Folder&lt;/h1&gt;\n&lt;P&gt;Please select the spreadsheet folder you would like to run the robot against:&lt;/P&gt;&quot;,&quot;refreshOnChange&quot;:true,&quot;key&quot;:&quot;html&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false},{&quot;label&quot;:&quot;Spreadsheet Folders&quot;,&quot;tableView&quot;:true,&quot;data&quot;:{&quot;values&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}]},&quot;validate&quot;:{&quot;onlyAvailableItems&quot;:false},&quot;key&quot;:&quot;listFolderNames&quot;,&quot;type&quot;:&quot;select&quot;,&quot;indexeddb&quot;:{&quot;filter&quot;:{}},&quot;input&quot;:true},{&quot;label&quot;:&quot;Container&quot;,&quot;customClass&quot;:&quot;box_continue&quot;,&quot;key&quot;:&quot;container1&quot;,&quot;type&quot;:&quot;container&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Stop&quot;,&quot;theme&quot;:&quot;danger&quot;,&quot;leftIcon&quot;:&quot;fa fa-close&quot;,&quot;customClass&quot;:&quot;btn&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;no&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;isResetData&quot;:false},{&quot;label&quot;:&quot;Continue&quot;,&quot;theme&quot;:&quot;success&quot;,&quot;leftIcon&quot;:&quot;fa fa-check&quot;,&quot;customClass&quot;:&quot;btn&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;continue&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;isResetData&quot;:false}]}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;1642693326066&quot;,&quot;Name&quot;:&quot;Standard&quot;,&quot;BaseCss&quot;:&quot;../../assets/css/themes/uipath.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;../../assets/themeicons/uipath.png&quot;,&quot;OverrideCssUrl&quot;:&quot;../../assets/css/themes/uipath.custom.css&quot;,&quot;UserStyleOverrides&quot;:&quot;body , h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {\n                      font-family : Calibri !important;\n                    }table, .btn, .form-control {\n                      font-size : 20px !important;\n                     }h1 {\n                      font-size : 42px !important;\n                    }h2 {\n                      font-size : 36px !important;\n                    }h3 {\n                      font-size : 30px !important;\n                    }h4 {\n                      font-size : 24px !important;\n                    }h5 {\n                      font-size : 20px !important;\n                    }h6 {\n                      font-size : 18px !important;\n                    }body {\n      background:  #ffffff !important;\n      font-size : 20px !important;\n      font-family : Calibri !important;\n      color : #000000 !important\n    } .panel-default {\n                        background:   !important;\n                        border-color :   !important;\n                      }\n                 .panel-default &gt; .panel-heading {\n                        background-color:  !important;\n                        color : #000000 !important\n                      }.btn-primary {\n                          background:  #ffffff !important;\n                          border-color:  #ffffff !important;\n                          color:  #000000 !important;\n                      } .btn-primary:hover {\n                          background:  #ffffff !important;\n                          color:  #000000 !important;\n                      } .btn-default {\n                        background:   !important;\n                        border-color:   !important;\n                        color:   !important;\n                      } .btn-default:hover {\n                        background:   !important;\n                        color:   !important;\n                      } &quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:true,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" FormTitle="Department for Environment, Farming, and Rural Affairs" FormWidth="600" GenerateInputFields="False" sap:VirtualizedContainerService.HintSize="549,141" sap2010:WorkflowViewState.IdRef="FormActivity_1" IsReadOnly="False" LocalCSSFilePath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\FolderSelect.css&quot;]" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="False" SelectedButton="[strSelectedButton]" StartAsMinimized="False">
+            <ufa:FormActivity.Body>
+              <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
+            </ufa:FormActivity.Body>
+            <ufa:FormActivity.DelayBody>
+              <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
+                <Delay Duration="00:00:00.2500000" sap2010:WorkflowViewState.IdRef="Delay_1" />
+              </ActivityAction>
+            </ufa:FormActivity.DelayBody>
+            <ufa:FormActivity.FormFieldsCollection>
+              <InArgument x:TypeArguments="scg:List(x:String)" x:Key="listFolderNames_dropdown">[listFolderNames.OrderBy(Function(x) x).ToList()]</InArgument>
+            </ufa:FormActivity.FormFieldsCollection>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ufa:FormActivity>
+          <If Condition="[NOT(boolDis = True OR strSelectedButton = &quot;no&quot;)]" DisplayName="Robot Dismissed?" sap:VirtualizedContainerService.HintSize="549,310" sap2010:WorkflowViewState.IdRef="If_10">
+            <If.Then>
+              <Sequence DisplayName="Assign Selected Folder Info" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign DisplayName="Deserealise Form Response" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_37">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="njl:JObject">[jobFormOutput]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="njl:JObject">[JsonConvert.DeserializeObject(Of JObject)(strFormOutput)]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Throw DisplayName="Throw BRE" Exception="[New BusinessRuleException(&quot;Spreadsheet folder selection closed by user!&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+            </If.Else>
+          </If>
+          <ui:ForEach x:TypeArguments="si:DirectoryInfo" CurrentIndex="{x:Null}" DisplayName="For Each Folder" sap:VirtualizedContainerService.HintSize="549,371" sap2010:WorkflowViewState.IdRef="ForEach`1_8" Values="[listFolders]">
+            <ui:ForEach.Body>
+              <ActivityAction x:TypeArguments="si:DirectoryInfo">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="si:DirectoryInfo" Name="item" />
+                </ActivityAction.Argument>
+                <If Condition="[item.Name = jobFormOutput(&quot;listFolderNames&quot;).ToString]" DisplayName="Selected Folder?" sap:VirtualizedContainerService.HintSize="484,247" sap2010:WorkflowViewState.IdRef="If_11">
+                  <If.Then>
+                    <Assign DisplayName="Assign Directory Info" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_38">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="si:DirectoryInfo">[dirToProcessFolder]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="si:DirectoryInfo">[New DirectoryInfo(item.FullName)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+              </ActivityAction>
+            </ui:ForEach.Body>
+          </ui:ForEach>
+        </Sequence>
+        <Assign DisplayName="Retrieve CPH Template Files" sap:VirtualizedContainerService.HintSize="591,60" sap2010:WorkflowViewState.IdRef="Assign_14">
           <Assign.To>
             <OutArgument x:TypeArguments="sl:IOrderedEnumerable(si:FileInfo)">[oeFileInfo]</OutArgument>
           </Assign.To>
@@ -545,7 +762,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </Assign>
-        <Assign DisplayName="Convert Array to List" sap:VirtualizedContainerService.HintSize="562,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+        <Assign DisplayName="Convert Array to List" sap:VirtualizedContainerService.HintSize="591,60" sap2010:WorkflowViewState.IdRef="Assign_17">
           <Assign.To>
             <OutArgument x:TypeArguments="scg:List(si:FileInfo)">[io_listFileInfo]</OutArgument>
           </Assign.To>
@@ -553,7 +770,7 @@
             <InArgument x:TypeArguments="scg:List(si:FileInfo)">[oeFileInfo.ToList]</InArgument>
           </Assign.Value>
         </Assign>
-        <Sequence DisplayName="Filter Out Completed Files" sap:VirtualizedContainerService.HintSize="562,687" sap2010:WorkflowViewState.IdRef="Sequence_22">
+        <Sequence DisplayName="Filter Out Completed Files" sap:VirtualizedContainerService.HintSize="591,687" sap2010:WorkflowViewState.IdRef="Sequence_22">
           <Sequence.Variables>
             <Variable x:TypeArguments="scg:List(si:FileInfo)" Default="[New List(Of System.IO.FileInfo)]" Name="listFilesToRemove" />
           </Sequence.Variables>
