@@ -619,7 +619,7 @@
           <av:PointCollection x:Key="ConnectorLocation">520,313 520,363</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Retrieve Files" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_8">
+      <Sequence DisplayName="Retrieve Files" sap:VirtualizedContainerService.HintSize="633,2537" sap2010:WorkflowViewState.IdRef="Sequence_8">
         <Sequence.Variables>
           <Variable x:TypeArguments="si:DirectoryInfo" Name="dirToProcessFolder" />
           <Variable x:TypeArguments="sl:IOrderedEnumerable(si:FileInfo)" Name="oeFileInfo" />
@@ -649,7 +649,7 @@
               <OutArgument x:TypeArguments="si:DirectoryInfo">[dirParentFolder]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="si:DirectoryInfo">[New DirectoryInfo("C:\Users\m1006120\Documents\Welsh Gov CPH\Data")]</InArgument>
+              <InArgument x:TypeArguments="si:DirectoryInfo">[New DirectoryInfo(in_Config("ToProcess").ToString)]</InArgument>
             </Assign.Value>
           </Assign>
           <Assign DisplayName="Assign Spreadsheet Folder Info" sap:VirtualizedContainerService.HintSize="549,60" sap2010:WorkflowViewState.IdRef="Assign_35">
