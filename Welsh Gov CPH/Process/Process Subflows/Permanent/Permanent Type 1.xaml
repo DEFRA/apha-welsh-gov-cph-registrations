@@ -144,7 +144,7 @@
           <av:PointCollection x:Key="ConnectorLocation">300,178.5 300,228.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_SAMBrowser]" BrowserType="Edge" DisplayName="Navigate to Search" sap:VirtualizedContainerService.HintSize="452,880" sap2010:WorkflowViewState.IdRef="BrowserScope_21">
+      <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_SAMBrowser]" BrowserType="Edge" DisplayName="Navigate to Search" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="BrowserScope_21">
         <ui:BrowserScope.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
@@ -468,9 +468,9 @@
                                               <av:PointCollection x:Key="ConnectorLocation">120,1050 120,1080 300,1080 300,1107</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <TryCatch DisplayName="Ask User to Identify Addresses" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                                          <TryCatch DisplayName="Ask User to Identify Addresses" sap:VirtualizedContainerService.HintSize="438,474" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                                             <TryCatch.Try>
-                                              <p:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="Confirm Search Results" sap:VirtualizedContainerService.HintSize="200,22" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\Address Popup.css&quot;]" IN_ErrorMessage="The stop button was pressed" IN_PopupMessage="[&quot;&lt;h1&gt;Please Review Search Results&lt;/h1&gt;&lt;p&gt;Records already exist in SAM for the given postcode, please review the search results and press Stop if the requested registration already exists.&lt;/p&gt;&lt;p&gt;Trading Title: &quot;+in_TransactionItem(0)(&quot;Trading Title&quot;).ToString+&quot;&lt;br&gt;CPH Number: &quot;+in_TransactionItem(0)(&quot;CPH&quot;).ToString+&quot;&lt;br&gt;Address Line 1: &quot;+in_TransactionItem(0)(&quot;Correspondence Address Line 1&quot;).ToString+&quot;&lt;/p&gt;&quot;]" IN_PopupTitle="Department for Environment, Food and Rural Affairs" IN_WidthHeight="[{500,500}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_11">
+                                              <p:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="Confirm Search Results" sap:VirtualizedContainerService.HintSize="200,22" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\Address Popup.css&quot;]" IN_ErrorMessage="The stop button was pressed" IN_PopupMessage="[&quot;&lt;h1&gt;Please Review Search Results&lt;/h1&gt;&lt;p&gt;Records already exist in SAM for the given postcode, please review the search results and press Stop if the requested registration already exists.&lt;/p&gt;&lt;p&gt;Trading Title: &quot;+in_TransactionItem(0)(&quot;Trading Title&quot;).ToString+&quot;&lt;br&gt;CPH Number: &quot;+in_TransactionItem(0)(&quot;CPH&quot;).ToString+&quot;&lt;br&gt;Address Line 1: &quot;+in_TransactionItem(0)(&quot;Correspondence Address Line 1&quot;).ToString+&quot;&lt;br&gt;Primary Contact: &quot;+in_TransactionItem(0)(&quot;Full Primary Contact Name / Keeper&quot;).ToString+&quot;&lt;/p&gt;&quot;]" IN_PopupTitle="Department for Environment, Food and Rural Affairs" IN_WidthHeight="[{500,500}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_11">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -479,7 +479,7 @@
                                               </p:Generic_PopUp>
                                             </TryCatch.Try>
                                             <TryCatch.Catches>
-                                              <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+                                              <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="404,104" sap2010:WorkflowViewState.IdRef="Catch`1_5">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
