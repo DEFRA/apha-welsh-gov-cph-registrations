@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1087,3021</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1156,3257</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Type_1_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -117,6 +117,11 @@
       <Variable x:TypeArguments="x:String" Name="strLocationID" />
       <Variable x:TypeArguments="x:Boolean" Name="boolRedRecord" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtLocationTable" />
+      <Variable x:TypeArguments="x:Boolean" Name="boolMultipleCPH">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Boolean" />
+        </Variable.Default>
+      </Variable>
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -408,11 +413,24 @@
                           </sap:WorkflowViewStateService.ViewState>
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Search for Cattle workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Process\Process Subflows\SAM Components\Search for Cattle.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <OutArgument x:TypeArguments="sd:DataTable" x:Key="OUT_AnimalType">[dtAnimalType]</OutArgument>
-                              <InArgument x:TypeArguments="ui:Browser" x:Key="IN_SAMBrowser">[in_SAMBrowser]</InArgument>
-                              <OutArgument x:TypeArguments="sd:DataTable" x:Key="OUT_AnimalSpecies">[dtAnimalSpecies]</OutArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="IN_CPH">[in_TransactionItem(0)("CPH").ToString]</InArgument>
-                              <InArgument x:TypeArguments="x:Int32" x:Key="IN_NoOfRecords">[intNoOfRecords]</InArgument>
+                              <OutArgument x:TypeArguments="sd:DataTable" x:Key="OUT_AnimalType">
+                                <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtAnimalType" />
+                              </OutArgument>
+                              <InArgument x:TypeArguments="ui:Browser" x:Key="IN_SAMBrowser">
+                                <mva:VisualBasicValue x:TypeArguments="ui:Browser" ExpressionText="in_SAMBrowser" />
+                              </InArgument>
+                              <OutArgument x:TypeArguments="sd:DataTable" x:Key="OUT_AnimalSpecies">
+                                <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtAnimalSpecies" />
+                              </OutArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="IN_CPH">
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem(0)(&quot;CPH&quot;).ToString" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:Int32" x:Key="IN_NoOfRecords">
+                                <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intNoOfRecords" />
+                              </InArgument>
+                              <OutArgument x:TypeArguments="x:Boolean" x:Key="OUT_boolMultipleCPH">
+                                <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolMultipleCPH" />
+                              </OutArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -556,7 +574,7 @@
                                                       <av:PointCollection x:Key="ConnectorLocation">300,645.5 300,695.5</av:PointCollection>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_SAMBrowser]" BrowserType="Edge" DisplayName="Confirm Status Update" sap:VirtualizedContainerService.HintSize="434,744" sap2010:WorkflowViewState.IdRef="BrowserScope_40">
+                                                  <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_SAMBrowser]" BrowserType="Edge" DisplayName="Confirm Status Update" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="BrowserScope_40">
                                                     <ui:BrowserScope.Body>
                                                       <ActivityAction x:TypeArguments="x:Object">
                                                         <ActivityAction.Argument>
@@ -838,7 +856,7 @@
                                                     <ActivityAction.Argument>
                                                       <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                                     </ActivityAction.Argument>
-                                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="526,1434" sap2010:WorkflowViewState.IdRef="Sequence_242">
+                                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="568,2231" sap2010:WorkflowViewState.IdRef="Sequence_242">
                                                       <Sequence.Variables>
                                                         <Variable x:TypeArguments="x:Boolean" Name="booTableVisible" />
                                                       </Sequence.Variables>
@@ -847,7 +865,7 @@
                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
-                                                      <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="484,518" sap2010:WorkflowViewState.IdRef="RetryScope_16" NumberOfRetries="3" RetryInterval="00:00:00">
+                                                      <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="526,518" sap2010:WorkflowViewState.IdRef="RetryScope_16" NumberOfRetries="3" RetryInterval="00:00:00">
                                                         <ui:RetryScope.ActivityBody>
                                                           <ActivityAction>
                                                             <Sequence DisplayName="Open Relationships Tab" sap:VirtualizedContainerService.HintSize="376,344" sap2010:WorkflowViewState.IdRef="Sequence_238">
@@ -891,7 +909,7 @@
                                                           <ActivityFunc x:TypeArguments="x:Boolean" />
                                                         </ui:RetryScope.Condition>
                                                       </ui:RetryScope>
-                                                      <ui:UiElementExists DisplayName="Related Livestock Tab Open?" Exists="[booTableVisible]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                                                      <ui:UiElementExists DisplayName="Related Livestock Tab Open?" Exists="[booTableVisible]" sap:VirtualizedContainerService.HintSize="526,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
                                                         <ui:UiElementExists.Target>
                                                           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a4b981f0-dd64-4740-a206-67b5fff16610" InformativeScreenshot="6a8dbc654d94b2b672765d53a8bf827a" Selector="&lt;webctrl id='PegaGadget1Ifr' tag='IFRAME' /&gt;&lt;webctrl aaname='ID NumberEnter to sort NameEnter to sort CPHEnter to sort CPH Ty*' id='gridLayoutTable' tag='TABLE' /&gt;" TimeoutMS="500">
                                                             <ui:Target.WaitForReady>
@@ -900,7 +918,7 @@
                                                           </ui:Target>
                                                         </ui:UiElementExists.Target>
                                                       </ui:UiElementExists>
-                                                      <If Condition="[NOT(booTableVisible)]" DisplayName="Related Tab Closed?" sap:VirtualizedContainerService.HintSize="484,292" sap2010:WorkflowViewState.IdRef="If_2">
+                                                      <If Condition="[NOT(booTableVisible)]" DisplayName="Related Tab Closed?" sap:VirtualizedContainerService.HintSize="526,292" sap2010:WorkflowViewState.IdRef="If_2">
                                                         <If.Then>
                                                           <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Related Locations" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_107" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                                                             <ui:Click.CursorPosition>
@@ -935,7 +953,7 @@
                                                           </Sequence>
                                                         </If.Else>
                                                       </If>
-                                                      <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[dtLocationTable]" DisplayName="Extract Location Table" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="0" SimulateClick="True">
+                                                      <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[dtLocationTable]" DisplayName="Extract Location Table" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="526,106" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="0" SimulateClick="True">
                                                         <ui:ExtractData.Target>
                                                           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="368cacf4-42e2-499d-b628-fbf8d2baaa7c" InformativeScreenshot="53ad80b7016331da538f05f8337d4b0a" Selector="&lt;webctrl aaname='ID NumberEnter to sort NameEnter to sort CPHEnter to sort CPH Ty*' id='bodyTbl_right' tag='TABLE' class='gridTable ' /&gt;" WaitForReady="COMPLETE">
                                                             <ui:Target.TimeoutMS>
@@ -944,7 +962,60 @@
                                                           </ui:Target>
                                                         </ui:ExtractData.Target>
                                                       </ui:ExtractData>
-                                                      <ui:FilterDataTable DataTable="[dtLocationTable]" DisplayName="Filter Locations to CPH" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="484,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dtLocationTable]" SelectColumnsMode="Keep">
+                                                      <Sequence DisplayName="Check for multiple CPHs" sap:VirtualizedContainerService.HintSize="526,757" sap2010:WorkflowViewState.IdRef="Sequence_248">
+                                                        <Sequence.Variables>
+                                                          <Variable x:TypeArguments="x:Int32" Name="intPreFilterRows" />
+                                                          <Variable x:TypeArguments="sd:DataTable" Name="dtCPH" />
+                                                        </Sequence.Variables>
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <Assign DisplayName="Assign intPreFilterRows" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+                                                          <Assign.To>
+                                                            <OutArgument x:TypeArguments="x:Int32">[intPreFilterRows]</OutArgument>
+                                                          </Assign.To>
+                                                          <Assign.Value>
+                                                            <InArgument x:TypeArguments="x:Int32">[dtLocationTable.RowCount]</InArgument>
+                                                          </Assign.Value>
+                                                        </Assign>
+                                                        <ui:FilterDataTable DataTable="[dtLocationTable]" DisplayName="Filter Columns to CPH" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="484,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[dtCPH]" SelectColumnsMode="Keep">
+                                                          <ui:FilterDataTable.Filters>
+                                                            <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                                                              <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="LT" />
+                                                            </scg:List>
+                                                          </ui:FilterDataTable.Filters>
+                                                          <ui:FilterDataTable.SelectColumns>
+                                                            <scg:List x:TypeArguments="InArgument" Capacity="4">
+                                                              <InArgument x:TypeArguments="x:String">["CPH"]</InArgument>
+                                                            </scg:List>
+                                                          </ui:FilterDataTable.SelectColumns>
+                                                        </ui:FilterDataTable>
+                                                        <ui:RemoveDuplicateRows OutputDataTable="{x:Null}" DataTable="[dtCPH]" DisplayName="Remove Duplicate CPHs" sap:VirtualizedContainerService.HintSize="484,79" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_1" />
+                                                        <If Condition="[dtCPH.RowCount &gt; 0]" DisplayName="More than one CPH?" sap:VirtualizedContainerService.HintSize="484,246" sap2010:WorkflowViewState.IdRef="If_3">
+                                                          <If.Then>
+                                                            <Assign DisplayName="Assign boolMultipleCPH" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+                                                              <Assign.To>
+                                                                <OutArgument x:TypeArguments="x:Boolean">[boolMultipleCPH]</OutArgument>
+                                                              </Assign.To>
+                                                              <Assign.Value>
+                                                                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                              </Assign.Value>
+                                                            </Assign>
+                                                          </If.Then>
+                                                          <If.Else>
+                                                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_247">
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                            </Sequence>
+                                                          </If.Else>
+                                                        </If>
+                                                      </Sequence>
+                                                      <ui:FilterDataTable DataTable="[dtLocationTable]" DisplayName="Filter Locations to CPH" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="526,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dtLocationTable]" SelectColumnsMode="Keep">
                                                         <ui:FilterDataTable.Filters>
                                                           <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                                                             <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
@@ -1301,7 +1372,7 @@
                                                       <FlowStep.Next>
                                                         <FlowDecision x:Name="__ReferenceID42" DisplayName="Single CPH?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_35">
                                                           <FlowDecision.Condition>
-                                                            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="intNoOfRecords = 1" />
+                                                            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="boolMultipleCPH = False" />
                                                           </FlowDecision.Condition>
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
