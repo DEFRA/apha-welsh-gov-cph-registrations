@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>658,1765</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1209,1765</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Type_1_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="43">
@@ -60,7 +60,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="33">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="66">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -94,6 +94,7 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -130,11 +131,11 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,127.5</av:Point>
-          <av:Size x:Key="ShapeSize">200,51</av:Size>
+          <av:Size x:Key="ShapeSize">200,52</av:Size>
           <av:PointCollection x:Key="ConnectorLocation">300,178.5 300,228.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_SAMBrowser]" BrowserType="Edge" DisplayName="Navigate to Search" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="BrowserScope_21">
+      <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_SAMBrowser]" BrowserType="Edge" DisplayName="Navigate to Search" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="BrowserScope_21">
         <ui:BrowserScope.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
@@ -245,12 +246,12 @@
             </sap:WorkflowViewStateService.ViewState>
           </ses:Complete_CPH_Search>
           <FlowStep.Next>
-            <FlowDecision x:Name="__ReferenceID3" Condition="[intNoOfRecords &gt; 0]" DisplayName="Records Found?" sap:VirtualizedContainerService.HintSize="90,87" sap2010:WorkflowViewState.IdRef="FlowDecision_22">
+            <FlowDecision x:Name="__ReferenceID3" Condition="[intNoOfRecords &gt; 0]" DisplayName="Records Found?" sap:VirtualizedContainerService.HintSize="90.5,87" sap2010:WorkflowViewState.IdRef="FlowDecision_22">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <av:Point x:Key="ShapeLocation">255,300.5</av:Point>
-                  <av:Size x:Key="ShapeSize">90,87</av:Size>
+                  <av:Size x:Key="ShapeSize">90.5,87</av:Size>
                   <x:String x:Key="FalseLabel">No</x:String>
                   <x:String x:Key="TrueLabel">Yes</x:String>
                   <av:PointCollection x:Key="FalseConnector">345,344 520,344 520,419</av:PointCollection>
@@ -262,11 +263,11 @@
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">200,504.5</av:Point>
-                      <av:Size x:Key="ShapeSize">200,51</av:Size>
+                      <av:Size x:Key="ShapeSize">200,52</av:Size>
                       <av:PointCollection x:Key="ConnectorLocation">300,555.5 300,605.5</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_SAMBrowser]" BrowserType="Edge" DisplayName="Select CPH Result" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="BrowserScope_30">
+                  <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_SAMBrowser]" BrowserType="Edge" DisplayName="Select CPH Result" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="BrowserScope_30">
                     <ui:BrowserScope.Body>
                       <ActivityAction x:TypeArguments="x:Object">
                         <ActivityAction.Argument>
@@ -349,11 +350,11 @@
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">200,605.5</av:Point>
-                          <av:Size x:Key="ShapeSize">200,66</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">300,671.5 300,721.5</av:PointCollection>
+                          <av:Size x:Key="ShapeSize">200,68</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">300,673.5 300,721.5</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Add New Task" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_202">
+                      <Sequence DisplayName="Add New Task" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_202">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -485,24 +486,27 @@
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <av:Point x:Key="ShapeLocation">0,832</av:Point>
-                                  <av:Size x:Key="ShapeSize">200,66</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">100,898 100,928 310,928 310,948</av:PointCollection>
+                                  <av:Size x:Key="ShapeSize">200,68</av:Size>
+                                  <av:PointCollection x:Key="ConnectorLocation">100,900 100,930 310,930 310,948</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Sequence DisplayName="Change Telephone Number" sap:VirtualizedContainerService.HintSize="653,2480" sap2010:WorkflowViewState.IdRef="Sequence_200">
+                              <Sequence DisplayName="Change Telephone Number" sap:VirtualizedContainerService.HintSize="756,2828" sap2010:WorkflowViewState.IdRef="Sequence_200">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="x:Boolean" Name="booNumExists" />
+                                </Sequence.Variables>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Sequence DisplayName="Assign Phone MetaData" sap:VirtualizedContainerService.HintSize="611,568" sap2010:WorkflowViewState.IdRef="Sequence_203">
+                                <Sequence DisplayName="Assign Phone MetaData" sap:VirtualizedContainerService.HintSize="714,572" sap2010:WorkflowViewState.IdRef="Sequence_203">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <If Condition="[in_TransactionItem(0)(&quot;Preferred Telephone Number&quot;).ToString.Substring(0,1) = &quot;0&quot;]" DisplayName="Phone Number Starts with 0?" sap:VirtualizedContainerService.HintSize="569,218" sap2010:WorkflowViewState.IdRef="If_36">
+                                  <If Condition="[in_TransactionItem(0)(&quot;Preferred Telephone Number&quot;).ToString.Substring(0,1) = &quot;0&quot;]" DisplayName="Phone Number Starts with 0?" sap:VirtualizedContainerService.HintSize="569,220" sap2010:WorkflowViewState.IdRef="If_36">
                                     <If.Then>
                                       <Assign DisplayName="Assign Phone Number" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_147">
                                         <Assign.To>
@@ -524,7 +528,7 @@
                                       </Assign>
                                     </If.Else>
                                   </If>
-                                  <If Condition="[Regex.Match(strPhoneNumber, &quot;^07*&quot;).Length &gt; 0]" DisplayName="Mobile or Landline?" sap:VirtualizedContainerService.HintSize="569,218" sap2010:WorkflowViewState.IdRef="If_37">
+                                  <If Condition="[Regex.Match(strPhoneNumber, &quot;^07*&quot;).Length &gt; 0]" DisplayName="Mobile or Landline?" sap:VirtualizedContainerService.HintSize="569,220" sap2010:WorkflowViewState.IdRef="If_37">
                                     <If.Then>
                                       <Assign DisplayName="Assign Telephone Type" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_149">
                                         <Assign.To>
@@ -547,101 +551,158 @@
                                     </If.Else>
                                   </If>
                                 </Sequence>
-                                <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[IN_SAMBrowser]" BrowserType="Edge" DisplayName="Attach Browser - Animal Health Portal" sap:VirtualizedContainerService.HintSize="611,1780" sap2010:WorkflowViewState.IdRef="BrowserScope_34" InformativeScreenshot="a3eb0c370f2b3c283f9154260a62236a">
+                                <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[IN_SAMBrowser]" BrowserType="Edge" DisplayName="Attach Browser - Animal Health Portal" sap:VirtualizedContainerService.HintSize="714,2124" sap2010:WorkflowViewState.IdRef="BrowserScope_34" InformativeScreenshot="a3eb0c370f2b3c283f9154260a62236a">
                                   <ui:BrowserScope.Body>
                                     <ActivityAction x:TypeArguments="x:Object">
                                       <ActivityAction.Argument>
                                         <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                       </ActivityAction.Argument>
-                                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="443,1634" sap2010:WorkflowViewState.IdRef="Sequence_199">
+                                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="680,1978" sap2010:WorkflowViewState.IdRef="Sequence_199">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Sequence DisplayName="Take &quot;Before&quot; Screenshot" sap:VirtualizedContainerService.HintSize="401,330" sap2010:WorkflowViewState.IdRef="Sequence_220">
+                                        <Sequence DisplayName="Check if Number Already Exists" sap:VirtualizedContainerService.HintSize="638,761" sap2010:WorkflowViewState.IdRef="Sequence_225">
                                           <Sequence.Variables>
-                                            <Variable x:TypeArguments="ui:Image" Name="screenshot" />
+                                            <Variable x:TypeArguments="sd1:DataTable" Name="dtTelecomAddresses" />
                                           </Sequence.Variables>
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:TakeScreenshot WaitBefore="{x:Null}" ContinueOnError="True" DisplayName="Take Screenshot 'DIV'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="TakeScreenshot_1" Screenshot="[screenshot]">
-                                            <ui:TakeScreenshot.Target>
-                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a29b6b5a-6732-467e-9e2a-a799a78360a9" InformativeScreenshot="2db883f81ee31a4358453ca3021f4e46" Selector="&lt;webctrl id='PegaGadget1Ifr' tag='IFRAME' /&gt;&lt;webctrl id='PEGA_GRID_SKIN' tag='DIV' class='spreadsheet' rowName='Type *Enter to sort' /&gt;">
+                                          <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[dtTelecomAddresses]" DisplayName="Extract Telecom Addresses" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="518,106" sap2010:WorkflowViewState.IdRef="ExtractData_2" MaxNumberOfResults="100" SimulateClick="True">
+                                            <ui:ExtractData.Target>
+                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5780a218-48bf-4ccf-923d-f8de6f8d1648" InformativeScreenshot="1bcecf470148e7dae3970dcc91b8d970" Selector="&lt;webctrl id='PegaGadget1Ifr' tag='IFRAME' /&gt;&lt;webctrl aaname='*Type*Number/Address*Details*Preferred*' id='bodyTbl_right' tag='TABLE' /&gt;" WaitForReady="COMPLETE">
                                                 <ui:Target.TimeoutMS>
                                                   <InArgument x:TypeArguments="x:Int32" />
                                                 </ui:Target.TimeoutMS>
-                                                <ui:Target.WaitForReady>
-                                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                </ui:Target.WaitForReady>
                                               </ui:Target>
-                                            </ui:TakeScreenshot.Target>
-                                          </ui:TakeScreenshot>
-                                          <ui:SaveImage ContinueOnError="True" DisplayName="Save Image" FileName="[io_Config(&quot;ExScreenshotsFolderPath&quot;).ToString+&quot;\Before.png&quot;]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[screenshot]" />
+                                            </ui:ExtractData.Target>
+                                          </ui:ExtractData>
+                                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtTelecomAddresses]" DisplayName="For Each Telecom Address" sap:VirtualizedContainerService.HintSize="518,523" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                                            <ui:ForEachRow.Body>
+                                              <ActivityAction x:TypeArguments="sd1:DataRow">
+                                                <ActivityAction.Argument>
+                                                  <DelegateInArgument x:TypeArguments="sd1:DataRow" Name="CurrentRow" />
+                                                </ActivityAction.Argument>
+                                                <If Condition="[CurrentRow.Item(1).ToString = strPhoneNumber.Trim]" DisplayName="Telephone Number Exists?" sap:VirtualizedContainerService.HintSize="484,403" sap2010:WorkflowViewState.IdRef="If_38">
+                                                  <If.Then>
+                                                    <Sequence DisplayName="Set Num Exists &amp; Break" sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_223">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <Assign DisplayName="Assign booNumExists" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_152">
+                                                        <Assign.To>
+                                                          <OutArgument x:TypeArguments="x:Boolean">[booNumExists]</OutArgument>
+                                                        </Assign.To>
+                                                        <Assign.Value>
+                                                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                        </Assign.Value>
+                                                      </Assign>
+                                                      <ui:Break sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Break_1" />
+                                                    </Sequence>
+                                                  </If.Then>
+                                                  <If.Else>
+                                                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_224">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                    </Sequence>
+                                                  </If.Else>
+                                                </If>
+                                              </ActivityAction>
+                                            </ui:ForEachRow.Body>
+                                          </ui:ForEachRow>
                                         </Sequence>
-                                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click to add new row" sap:VirtualizedContainerService.HintSize="401,106" sap2010:WorkflowViewState.IdRef="Click_73" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
-                                          <ui:Click.CursorPosition>
-                                            <ui:CursorPosition Position="Center">
-                                              <ui:CursorPosition.OffsetX>
-                                                <InArgument x:TypeArguments="x:Int32" />
-                                              </ui:CursorPosition.OffsetX>
-                                              <ui:CursorPosition.OffsetY>
-                                                <InArgument x:TypeArguments="x:Int32" />
-                                              </ui:CursorPosition.OffsetY>
-                                            </ui:CursorPosition>
-                                          </ui:Click.CursorPosition>
-                                          <ui:Click.Target>
-                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="36c464d4-995a-404e-b917-17f882520c2d" InformativeScreenshot="e6a931f91abd7ee0a0399dcfe9b1ffd9" Selector="&lt;webctrl id='PegaGadget1Ifr' tag='IFRAME' /&gt;&lt;webctrl name='contactDetails*' tag='A' aaname='Add a row ' class='iconInsert' /&gt;">
-                                              <ui:Target.TimeoutMS>
-                                                <InArgument x:TypeArguments="x:Int32" />
-                                              </ui:Target.TimeoutMS>
-                                              <ui:Target.WaitForReady>
-                                                <InArgument x:TypeArguments="ui:WaitForReady" />
-                                              </ui:Target.WaitForReady>
-                                            </ui:Target>
-                                          </ui:Click.Target>
-                                        </ui:Click>
-                                        <Sequence DisplayName="Take &quot;After&quot; Screenshot" sap:VirtualizedContainerService.HintSize="401,330" sap2010:WorkflowViewState.IdRef="Sequence_221">
-                                          <Sequence.Variables>
-                                            <Variable x:TypeArguments="ui:Image" Name="screenshot" />
-                                          </Sequence.Variables>
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <ui:TakeScreenshot WaitBefore="{x:Null}" ContinueOnError="True" DisplayName="Take Screenshot 'DIV'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="TakeScreenshot_2" Screenshot="[screenshot]">
-                                            <ui:TakeScreenshot.Target>
-                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a29b6b5a-6732-467e-9e2a-a799a78360a9" InformativeScreenshot="2db883f81ee31a4358453ca3021f4e46" Selector="&lt;webctrl id='PegaGadget1Ifr' tag='IFRAME' /&gt;&lt;webctrl id='PEGA_GRID_SKIN' tag='DIV' class='spreadsheet' rowName='Type *Enter to sort' /&gt;">
-                                                <ui:Target.TimeoutMS>
-                                                  <InArgument x:TypeArguments="x:Int32" />
-                                                </ui:Target.TimeoutMS>
-                                                <ui:Target.WaitForReady>
-                                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                </ui:Target.WaitForReady>
-                                              </ui:Target>
-                                            </ui:TakeScreenshot.Target>
-                                          </ui:TakeScreenshot>
-                                          <ui:SaveImage ContinueOnError="True" DisplayName="Save Image" FileName="[io_Config(&quot;ExScreenshotsFolderPath&quot;).ToString+&quot;\After.png&quot;]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="SaveImage_2" Image="[screenshot]" />
-                                        </Sequence>
-                                        <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="401,308" sap2010:WorkflowViewState.IdRef="RetryScope_19" NumberOfRetries="3" RetryInterval="00:00:02">
-                                          <ui:RetryScope.ActivityBody>
-                                            <ActivityAction>
-                                              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Mobile Number" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="[strTelephoneType]">
+                                        <If Condition="[booNumExists = False]" DisplayName="Number Doesn't Exist?" sap:VirtualizedContainerService.HintSize="638,1085" sap2010:WorkflowViewState.IdRef="If_39">
+                                          <If.Then>
+                                            <Sequence DisplayName="Add Phone Number" sap:VirtualizedContainerService.HintSize="602,896" sap2010:WorkflowViewState.IdRef="Sequence_226">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click to add new row" sap:VirtualizedContainerService.HintSize="560,106" sap2010:WorkflowViewState.IdRef="Click_100" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                                                <ui:Click.CursorPosition>
+                                                  <ui:CursorPosition Position="Center">
+                                                    <ui:CursorPosition.OffsetX>
+                                                      <InArgument x:TypeArguments="x:Int32" />
+                                                    </ui:CursorPosition.OffsetX>
+                                                    <ui:CursorPosition.OffsetY>
+                                                      <InArgument x:TypeArguments="x:Int32" />
+                                                    </ui:CursorPosition.OffsetY>
+                                                  </ui:CursorPosition>
+                                                </ui:Click.CursorPosition>
+                                                <ui:Click.Target>
+                                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="36c464d4-995a-404e-b917-17f882520c2d" InformativeScreenshot="e6a931f91abd7ee0a0399dcfe9b1ffd9" Selector="&lt;webctrl id='PegaGadget1Ifr' tag='IFRAME' /&gt;&lt;webctrl name='contactDetails*' tag='A' aaname='Add a row ' class='iconInsert' /&gt;">
+                                                    <ui:Target.TimeoutMS>
+                                                      <InArgument x:TypeArguments="x:Int32" />
+                                                    </ui:Target.TimeoutMS>
+                                                    <ui:Target.WaitForReady>
+                                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                    </ui:Target.WaitForReady>
+                                                  </ui:Target>
+                                                </ui:Click.Target>
+                                              </ui:Click>
+                                              <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="560,310" sap2010:WorkflowViewState.IdRef="RetryScope_32" NumberOfRetries="3" RetryInterval="00:00:02">
+                                                <ui:RetryScope.ActivityBody>
+                                                  <ActivityAction>
+                                                    <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Mobile Number" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_3" Item="[strTelephoneType]">
+                                                      <ui:SelectItem.Items>
+                                                        <scg:List x:TypeArguments="x:String" Capacity="8">
+                                                          <x:String>Please Select</x:String>
+                                                          <x:String>E-mail address</x:String>
+                                                          <x:String>Fax</x:String>
+                                                          <x:String>Landline telephone</x:String>
+                                                          <x:String>Mobile telephone</x:String>
+                                                        </scg:List>
+                                                      </ui:SelectItem.Items>
+                                                      <ui:SelectItem.Target>
+                                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b616b56b-e892-4453-bf4c-1c656918873b" InformativeScreenshot="4d1e027019001161ba1682f7a83e9e47" Selector="&lt;webctrl tag='SELECT' class='standard' colName='Type *Enter to sort' tableCol='1' /&gt;">
+                                                          <ui:Target.TimeoutMS>
+                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                          </ui:Target.TimeoutMS>
+                                                          <ui:Target.WaitForReady>
+                                                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                          </ui:Target.WaitForReady>
+                                                        </ui:Target>
+                                                      </ui:SelectItem.Target>
+                                                    </ui:SelectItem>
+                                                  </ActivityAction>
+                                                </ui:RetryScope.ActivityBody>
+                                                <ui:RetryScope.Condition>
+                                                  <ActivityFunc x:TypeArguments="x:Boolean" />
+                                                </ui:RetryScope.Condition>
+                                              </ui:RetryScope>
+                                              <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Phone Number" EmptyField="True" sap:VirtualizedContainerService.HintSize="560,134" sap2010:WorkflowViewState.IdRef="TypeInto_4" SimulateType="True" Text="[strPhoneNumber]">
+                                                <ui:TypeInto.Target>
+                                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="eaaf5b51-e14d-4ef2-9e29-5aa1503280a3" InformativeScreenshot="21ba39d2dcc9afed3c7ace64cee1195e" Selector="&lt;webctrl tag='INPUT' class='leftJustifyStyle' colName='Number/Address *' rowName='Please SelectE-mail addressFaxLandline telephoneMobile telephone' /&gt;">
+                                                    <ui:Target.TimeoutMS>
+                                                      <InArgument x:TypeArguments="x:Int32" />
+                                                    </ui:Target.TimeoutMS>
+                                                    <ui:Target.WaitForReady>
+                                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                    </ui:Target.WaitForReady>
+                                                  </ui:Target>
+                                                </ui:TypeInto.Target>
+                                              </ui:TypeInto>
+                                              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Correspondence" sap:VirtualizedContainerService.HintSize="560,134" sap2010:WorkflowViewState.IdRef="SelectItem_4" Item="Correspondence">
                                                 <ui:SelectItem.Items>
-                                                  <scg:List x:TypeArguments="x:String" Capacity="8">
-                                                    <x:String>Please Select</x:String>
-                                                    <x:String>E-mail address</x:String>
-                                                    <x:String>Fax</x:String>
-                                                    <x:String>Landline telephone</x:String>
-                                                    <x:String>Mobile telephone</x:String>
+                                                  <scg:List x:TypeArguments="x:String" Capacity="4">
+                                                    <x:String>Please Select...</x:String>
+                                                    <x:String>Correspondence</x:String>
+                                                    <x:String>Home</x:String>
+                                                    <x:String>Business</x:String>
                                                   </scg:List>
                                                 </ui:SelectItem.Items>
                                                 <ui:SelectItem.Target>
-                                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b616b56b-e892-4453-bf4c-1c656918873b" InformativeScreenshot="4d1e027019001161ba1682f7a83e9e47" Selector="&lt;webctrl tag='SELECT' class='standard' colName='Type *Enter to sort' tableCol='1' /&gt;">
+                                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="44a9e4a0-d26b-4ced-a904-59959b334599" InformativeScreenshot="b685c489ac95eaa2ab0424de5ea66c2d" Selector="&lt;webctrl tag='SELECT' colName='Details' innertext='Please Select...CorrespondenceHomeBusiness' rowName='Please SelectE-mail addressFaxLandline telephoneMobile telephone' /&gt;">
                                                     <ui:Target.TimeoutMS>
                                                       <InArgument x:TypeArguments="x:Int32" />
                                                     </ui:Target.TimeoutMS>
@@ -651,59 +712,33 @@
                                                   </ui:Target>
                                                 </ui:SelectItem.Target>
                                               </ui:SelectItem>
-                                            </ActivityAction>
-                                          </ui:RetryScope.ActivityBody>
-                                          <ui:RetryScope.Condition>
-                                            <ActivityFunc x:TypeArguments="x:Boolean" />
-                                          </ui:RetryScope.Condition>
-                                        </ui:RetryScope>
-                                        <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Phone Number" EmptyField="True" sap:VirtualizedContainerService.HintSize="401,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[strPhoneNumber]">
-                                          <ui:TypeInto.Target>
-                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="eaaf5b51-e14d-4ef2-9e29-5aa1503280a3" InformativeScreenshot="21ba39d2dcc9afed3c7ace64cee1195e" Selector="&lt;webctrl tag='INPUT' class='leftJustifyStyle' colName='Number/Address *' rowName='Please SelectE-mail addressFaxLandline telephoneMobile telephone' /&gt;">
-                                              <ui:Target.TimeoutMS>
-                                                <InArgument x:TypeArguments="x:Int32" />
-                                              </ui:Target.TimeoutMS>
-                                              <ui:Target.WaitForReady>
-                                                <InArgument x:TypeArguments="ui:WaitForReady" />
-                                              </ui:Target.WaitForReady>
-                                            </ui:Target>
-                                          </ui:TypeInto.Target>
-                                        </ui:TypeInto>
-                                        <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Correspondence" sap:VirtualizedContainerService.HintSize="401,134" sap2010:WorkflowViewState.IdRef="SelectItem_2" Item="Correspondence">
-                                          <ui:SelectItem.Items>
-                                            <scg:List x:TypeArguments="x:String" Capacity="4">
-                                              <x:String>Please Select...</x:String>
-                                              <x:String>Correspondence</x:String>
-                                              <x:String>Home</x:String>
-                                              <x:String>Business</x:String>
-                                            </scg:List>
-                                          </ui:SelectItem.Items>
-                                          <ui:SelectItem.Target>
-                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="44a9e4a0-d26b-4ced-a904-59959b334599" InformativeScreenshot="b685c489ac95eaa2ab0424de5ea66c2d" Selector="&lt;webctrl tag='SELECT' colName='Details' innertext='Please Select...CorrespondenceHomeBusiness' rowName='Please SelectE-mail addressFaxLandline telephoneMobile telephone' /&gt;">
-                                              <ui:Target.TimeoutMS>
-                                                <InArgument x:TypeArguments="x:Int32" />
-                                              </ui:Target.TimeoutMS>
-                                              <ui:Target.WaitForReady>
-                                                <InArgument x:TypeArguments="ui:WaitForReady" />
-                                              </ui:Target.WaitForReady>
-                                            </ui:Target>
-                                          </ui:SelectItem.Target>
-                                        </ui:SelectItem>
+                                            </Sequence>
+                                          </If.Then>
+                                          <If.Else>
+                                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_227">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </Sequence>
+                                          </If.Else>
+                                        </If>
                                       </Sequence>
                                     </ActivityAction>
                                   </ui:BrowserScope.Body>
                                 </ui:BrowserScope>
                               </Sequence>
                               <FlowStep.Next>
-                                <FlowDecision x:Name="__ReferenceID2" Condition="[in_TransactionItem(0)(&quot;Correspondence Post Code&quot;).ToString.Length &gt; 0]" DisplayName="Change of Address Required" sap:VirtualizedContainerService.HintSize="156,87" sap2010:WorkflowViewState.IdRef="FlowDecision_24">
+                                <FlowDecision x:Name="__ReferenceID2" Condition="[in_TransactionItem(0)(&quot;Correspondence Post Code&quot;).ToString.Length &gt; 0]" DisplayName="Change of Address Required" sap:VirtualizedContainerService.HintSize="158,87" sap2010:WorkflowViewState.IdRef="FlowDecision_24">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       <av:Point x:Key="ShapeLocation">232,948</av:Point>
-                                      <av:Size x:Key="ShapeSize">156,87</av:Size>
+                                      <av:Size x:Key="ShapeSize">158,87</av:Size>
                                       <av:PointCollection x:Key="TrueConnector">232,991.5 100,991.5 100,1058.5</av:PointCollection>
-                                      <av:PointCollection x:Key="FalseConnector">388,991.5 400,991.5 400,1153 310,1153 310,1174.5</av:PointCollection>
+                                      <av:PointCollection x:Key="FalseConnector">390,991.5 420,991.5 420,1144.5 310,1144.5 310,1174.5</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <FlowDecision.True>
@@ -711,11 +746,11 @@
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <av:Point x:Key="ShapeLocation">0,1058.5</av:Point>
-                                          <av:Size x:Key="ShapeSize">200,66</av:Size>
-                                          <av:PointCollection x:Key="ConnectorLocation">100,1124.5 100,1154.5 310,1154.5 310,1174.5</av:PointCollection>
+                                          <av:Size x:Key="ShapeSize">200,68</av:Size>
+                                          <av:PointCollection x:Key="ConnectorLocation">100,1126.5 100,1156.5 310,1156.5 310,1174.5</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Sequence DisplayName="Change Address" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_205">
+                                      <Sequence DisplayName="Change Address" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_205">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -876,11 +911,11 @@
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <av:Point x:Key="ShapeLocation">210,1174.5</av:Point>
-                                              <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                              <av:Size x:Key="ShapeSize">200,52</av:Size>
                                               <av:PointCollection x:Key="ConnectorLocation">310,1225.5 310,1264.5</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_SAMBrowser]" BrowserType="Chrome" DisplayName="Submit Updated Details" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="BrowserScope_37" InformativeScreenshot="bf64374717a8a3fce67da6aa413b3f00">
+                                          <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_SAMBrowser]" BrowserType="Chrome" DisplayName="Submit Updated Details" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="BrowserScope_37" InformativeScreenshot="bf64374717a8a3fce67da6aa413b3f00">
                                             <ui:BrowserScope.Body>
                                               <ActivityAction x:TypeArguments="x:Object">
                                                 <ActivityAction.Argument>
@@ -1021,16 +1056,16 @@
                                             </ui:BrowserScope.Body>
                                           </ui:BrowserScope>
                                           <FlowStep.Next>
-                                            <FlowDecision x:Name="__ReferenceID5" Condition="[CBool(io_Config(&quot;boolPausePoint9&quot;))]" DisplayName="Pause Point 9 Enabled?" sap:VirtualizedContainerService.HintSize="127,87" sap2010:WorkflowViewState.IdRef="FlowDecision_18">
+                                            <FlowDecision x:Name="__ReferenceID5" Condition="[CBool(io_Config(&quot;boolPausePoint9&quot;))]" DisplayName="Pause Point 9 Enabled?" sap:VirtualizedContainerService.HintSize="128.5,87" sap2010:WorkflowViewState.IdRef="FlowDecision_18">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   <av:Point x:Key="ShapeLocation">246.5,1264.5</av:Point>
-                                                  <av:Size x:Key="ShapeSize">127,87</av:Size>
+                                                  <av:Size x:Key="ShapeSize">128.5,87</av:Size>
                                                   <x:String x:Key="FalseLabel">No</x:String>
                                                   <x:String x:Key="TrueLabel">Yes</x:String>
                                                   <av:PointCollection x:Key="TrueConnector">246.5,1308 100,1308 100,1375</av:PointCollection>
-                                                  <av:PointCollection x:Key="FalseConnector">373.5,1308 400,1308 400,1471 310,1471 310,1501</av:PointCollection>
+                                                  <av:PointCollection x:Key="FalseConnector">375,1308 400,1308 400,1471 310,1471 310,1501</av:PointCollection>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
                                               <FlowDecision.True>
@@ -1038,11 +1073,11 @@
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <av:Point x:Key="ShapeLocation">0,1375</av:Point>
-                                                      <av:Size x:Key="ShapeSize">200,66</av:Size>
-                                                      <av:PointCollection x:Key="ConnectorLocation">100,1441 100,1471 310,1471 310,1501</av:PointCollection>
+                                                      <av:Size x:Key="ShapeSize">200,68</av:Size>
+                                                      <av:PointCollection x:Key="ConnectorLocation">100,1443 100,1473 310,1473 310,1501</av:PointCollection>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <Sequence DisplayName="Pause Point 9" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_153">
+                                                  <Sequence DisplayName="Pause Point 9" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_153">
                                                     <Sequence.Variables>
                                                       <Variable x:TypeArguments="x:String" Name="strDataAsTable" />
                                                     </Sequence.Variables>
@@ -1108,11 +1143,11 @@
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <av:Point x:Key="ShapeLocation">210,1501</av:Point>
-                                                          <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                          <av:Size x:Key="ShapeSize">200,52</av:Size>
                                                           <av:PointCollection x:Key="ConnectorLocation">310,1552 310,1602</av:PointCollection>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
-                                                      <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_SAMBrowser]" BrowserType="Chrome" DisplayName="Submit Updated Details" sap:VirtualizedContainerService.HintSize="434,798" sap2010:WorkflowViewState.IdRef="BrowserScope_25" InformativeScreenshot="bf64374717a8a3fce67da6aa413b3f00">
+                                                      <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_SAMBrowser]" BrowserType="Chrome" DisplayName="Submit Updated Details" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="BrowserScope_25" InformativeScreenshot="bf64374717a8a3fce67da6aa413b3f00">
                                                         <ui:BrowserScope.Body>
                                                           <ActivityAction x:TypeArguments="x:Object">
                                                             <ActivityAction.Argument>
@@ -1200,10 +1235,10 @@
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <av:Point x:Key="ShapeLocation">210,1602</av:Point>
-                                                              <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                              <av:Size x:Key="ShapeSize">200,52</av:Size>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                          <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_SAMBrowser]" BrowserType="Edge" DisplayName="End Research" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="BrowserScope_29">
+                                                          <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_SAMBrowser]" BrowserType="Edge" DisplayName="End Research" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="BrowserScope_29">
                                                             <ui:BrowserScope.Body>
                                                               <ActivityAction x:TypeArguments="x:Object">
                                                                 <ActivityAction.Argument>
